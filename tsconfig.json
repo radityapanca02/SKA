@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "allowJs": true,
+        "strict": false,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "baseUrl": "./resources/ts",
+        "ignoreDeprecations": "5.0",
+        "paths": {
+            "@/*": ["./*"]
+        },
+        "typeRoots": [
+            "./node_modules/@types",
+            "./types"
+        ],
+        "types": ["node"]
+    },
+    "include": [
+        "resources/ts/**/*",
+        "vite.config.ts",
+        "types/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "vendor",
+        "public",
+        "storage"
+    ]
+}

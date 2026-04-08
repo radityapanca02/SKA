@@ -1,0 +1,258 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./swiper.css";
+
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "typeface-poppins";
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+    scroll-behavior: smooth;
+}
+
+/* @theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+} */
+
+.gradient-overlay {
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 0%, black 100%);
+}
+
+.department-card {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 48px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.department-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.info-card {
+    border-radius: 34px;
+    overflow: hidden;
+}
+
+.habit-card {
+    border-radius: 25px;
+    transition: transform 0.3s ease;
+}
+
+.habit-card:hover {
+    transform: translateY(-5px);
+}
+
+.scroll-container {
+    animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+.nav-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.nav-menu.active {
+    max-height: 500px;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* Loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+/* Micromodal Styles */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+}
+
+.modal.is-open {
+    display: flex;
+}
+
+.modal__container {
+    background: white;
+    border-radius: 1rem;
+    max-width: 42rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: scale(0.95);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.modal.is-open .modal__container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin-bottom: 0.5rem;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.no-data-message {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+.viewing-notification {
+    animation: slideInRight 0.3s ease-out;
+    min-width: 180px;
+}
+
+.auto-increment-notification {
+    animation: slideInRight 0.3s ease-out, fadeOut 0.3s ease-in 2.7s forwards;
+    min-width: 140px;
+}
+
+/* Warna berbeda untuk setiap jurusan */
+.viewing-notification[data-section="elektro"] {
+    background: #f97316;
+    border-left: 4px solid #ea580c;
+}
+
+.viewing-notification[data-section="otomotif"] {
+    background: #ef4444;
+    border-left: 4px solid #dc2626;
+}
+
+.viewing-notification[data-section="pemesinan"] {
+    background: #3b82f6;
+    border-left: 4px solid #2563eb;
+}
+
+.viewing-notification[data-section="tik"] {
+    background: #8b5cf6;
+    border-left: 4px solid #7c3aed;
+}
+
+.viewing-notification,
+.auto-increment-notification {
+    z-index: 9999;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
