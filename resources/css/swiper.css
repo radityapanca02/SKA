@@ -1,0 +1,133 @@
+@keyframes bullet-loading {
+    0% {
+        transform: scaleX(0);
+        transform-origin: left;
+    }
+
+    100% {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+.swiper-pagination-bullet {
+    position: relative;
+    background-color: #585858 !important;
+    opacity: 1 !important;
+    width: 1.5rem !important;
+    border-radius: 1rem !important;
+}
+
+.swiper-pagination-bullet-active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: bullet-loading 5000ms linear forwards !important;
+    border-radius: 1rem;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #585858 !important;
+    transition-property: opacity;
+}
+
+/* Tombol Next & Prev (Navigation) */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+    transition-property: color;
+    transition-duration: 300ms;
+}
+
+/* Hover efek tombol navigasi */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #d1d5db;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #fff !important;
+    font-size: 1.5rem !important;
+    transition: color 300ms;
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+    color: #d1d5db !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+    fill: #fff !important;
+    /* Warna panah */
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: fill 300ms;
+}
+
+.swiper-button-next:hover svg,
+.swiper-button-prev:hover svg {
+    fill: #d1d5db !important;
+    /* Tailwind gray-300 */
+}
+
+.dark .swiper-button-next svg,
+.dark .swiper-button-prev svg {
+    fill: #f3f4f6 !important;
+    /* Tailwind gray-100 */
+}
+
+.dark .swiper-button-next:hover svg,
+.dark .swiper-button-prev:hover svg {
+    fill: #d1d5db !important;
+    /* Tailwind gray-300 */
+}
+
+/* Dark Mode */
+.dark .swiper-pagination-bullet {
+    background-color: #9ca3af !important;
+}
+
+.dark .swiper-pagination-bullet-active::before {
+    background-color: #f3f4f6;
+}
+
+.dark .swiper-pagination-bullet-active {
+    background-color: #f3f4f6;
+    opacity: 1;
+}
+
+.dark .swiper-button-next,
+.dark .swiper-button-prev {
+    color: #f3f4f6;
+}
+
+.dark .swiper-button-next:hover,
+.dark .swiper-button-prev:hover {
+    color: #d1d5db;
+}
+
+.dark .swiper-button-next::after,
+.dark .swiper-button-prev::after {
+    color: #f3f4f6;
+}
+
+.dark .swiper-button-next:hover::after,
+.dark .swiper-button-prev:hover::after {
+    color: #d1d5db;
+}
+
+@media screen and (min-width: 640px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+        color: transparent;
+    }
+}
