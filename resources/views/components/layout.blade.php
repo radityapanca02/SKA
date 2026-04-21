@@ -10,12 +10,20 @@
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    
+    <!-- C's CDNs for migration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="shortcut icon" href="{{ $assetBase }}/assets/skariga300rbg.png" type="image/x-icon">
 
     @production
     <link rel="stylesheet" href="{{ $assetBase }}/build/assets/app.css">
     @endproduction
+    
+    @stack('styles')
 </head>
 
 <body class="bg-[#F8F8F8] m-0 p-0 overflow-x-hidden"
@@ -116,20 +124,9 @@
                 this.currentDomain === 'www.' + this.primaryDomain;
         }
     };
-
-    window.addEventListener('beforeunload', function() {
-        fetch('/api/visitor-leave', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                action: 'leave'
-            }),
-            keepalive: true
-        });
-    });
     </script>
+
+    @stack('scripts')
 </body>
 
 </html>

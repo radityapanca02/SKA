@@ -178,7 +178,7 @@
 
                         <!-- Card 3 -->
                         <div
-                            class="sm:col-span-2 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
+                            class="col-span-1 md:col-span-2 lg:col-span-1 bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
                             <div class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
                                 <i class="fas fa-shirt text-white text-2xl"></i>
                             </div>

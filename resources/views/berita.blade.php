@@ -1,297 +1,139 @@
 <x-layout title="Berita - SMK PGRI 3 Malang">
-    <div class="bg-[#F8F8F8]">
-        <section class="bg-gradient-to-r from-custombbg-customBlue text-white py-12">
-            <div class="container mx-auto px-4 py-4">
-                <div class="max-w-1xl">
-                    <h1 class="text-4xl font-bold mb-4 text-gray-700">Berita Terkini SKARIGA</h1>
-                    <p class="text-lg text-gray-500">Ikuti perkembangan terbaru seputar kegiatan, prestasi, dan
-                        informasi penting
-                        dari SMK PGRI 3 Malang.</p>
-                </div>
-            </div>
-        </section>
+@push('styles')
+<style>
+    .font-bebas { font-family: 'Bebas Neue', cursive; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    .berita-section { padding: 4rem 1rem; background: transparent; position: relative; }
+    .berita-title { font-size: 2.5rem; background: linear-gradient(135deg, #1f2937, #374151); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 3rem; position: relative; text-align: center; }
+    .berita-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(90deg, #f97316, #fdba74); border-radius: 2px; }
+    .berita-container { width: 98%; max-width: none; margin: 0 auto; position: relative; }
+    .berita-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start; }
+    .berita-main-card { background: white; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.4s ease; border: 1px solid #f3f4f6; height: fit-content; position: relative; }
+    .berita-main-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); border-color: #f97316; }
+    .berita-main-image { width: 100%; height: 280px; object-fit: cover; transition: transform 0.4s ease; }
+    .berita-main-card:hover .berita-main-image { transform: scale(1.05); }
+    .berita-main-content { padding: 1.5rem; }
+    .berita-main-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; line-height: 1.3; }
+    .berita-main-excerpt { color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; display: block; overflow: visible; white-space: normal; }
+    .berita-side-container { display: flex; flex-direction: column; gap: 1rem; height: 100%; }
+    .berita-side-card { display: flex; height: 245px; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); border: 1px solid #f3f4f6; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .berita-side-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: #f97316; }
+    .berita-side-image { width: 50%; min-width: 200px; max-width: 200px; height: 100%; object-fit: cover; transition: transform 0.3s ease; flex-shrink: 0; }
+    .berita-side-card:hover .berita-side-image { transform: scale(1.05); }
+    .berita-side-content { flex: 1; padding: 0.9rem 1rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 210px; }
+    .berita-date { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #6b7280; margin-bottom: 0.3rem; }
+    .berita-side-title { font-weight: 600; font-size: 1rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .berita-side-excerpt { color: #6b7280; line-height: 1.5; font-size: 0.875rem; margin-bottom: 0.5rem; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+    .berita-read-more { font-size: 0.85rem; color: #f97316; font-weight: 600; text-decoration: none; align-self: flex-start; transition: color 0.3s ease; }
+    .berita-read-more:hover { text-decoration: underline; color: #ea580c; }
+    .berita-badge { position: absolute; top: 1rem; left: 1rem; background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.4rem 0.8rem; border-radius: 1.5rem; font-size: 0.75rem; font-weight: 600; z-index: 3; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3); }
+    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+    .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+    .berita-section~.berita-section { padding-top: 0; padding-bottom: 2rem; }
+    .berita-section~.berita-section .berita-title { margin-bottom: 2rem; }
+    .berita-section:first-child { padding-top: 4rem; padding-bottom: 4rem; }
+    .berita-section:first-child .berita-title { margin-bottom: 3rem; }
+    @media (max-width: 1024px) {
+        .berita-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+        .berita-side-container { flex-direction: row; gap: 1rem; }
+        .berita-side-card { flex: 1; height: auto; }
+        .berita-side-image { width: 120px; height: 100%; }
+    }
+    @media (max-width: 768px) {
+        .berita-section { padding: 3rem 1rem; }
+        .berita-title { font-size: 2rem; margin-bottom: 2rem; }
+        .berita-main-image { height: 220px; }
+        .berita-main-title { font-size: 1.3rem; }
+        .berita-main-content { padding: 1.25rem; }
+        .berita-side-container { flex-direction: column; }
+        .berita-side-card { flex-direction: row; height: auto; }
+        .berita-side-image { width: 100px; height: 100%; }
+        .berita-side-content { padding: 1rem; }
+        .berita-side-title { font-size: 1rem; }
+    }
+    @media (max-width: 480px) {
+        .berita-section { padding: 2rem 1rem; }
+        .berita-title { font-size: 1.75rem; }
+        .berita-main-image { height: 180px; }
+        .berita-side-card { flex-direction: row; }
+        .berita-side-image { width: 80px; height: 100%; }
+    }
+    html, body { background-color: transparent !important; position: relative; z-index: 0; }
+    main { position: relative; z-index: 1; }
+</style>
+@endpush
 
-        <div class="sidebar-overlay fixed inset-0 bg-black bg-opacity-50 z-40 opacity-0 invisible transition-all duration-300 ease-in-out"
-            id="sidebarOverlay"></div>
+<div class="min-h-screen relative z-0">
+@php
+    $beritaArray = $beritas->values();
+    $sections = [
+        ['title' => 'BERITA TERBARU', 'items' => $beritaArray->slice(0, 3)],
+        ['title' => 'BERITA SEKOLAH', 'items' => $beritaArray->slice(3, 3)],
+        ['title' => 'BERITA LAINNYA', 'items' => $beritaArray->slice(6, 100)],
+    ];
+@endphp
 
-        <div class="sidebar fixed top-0 right-[-100%] w-1/2 h-full bg-white z-50 overflow-y-auto transition-right duration-300 ease-in-out shadow-2xl"
-            id="newsSidebar">
-            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 z-10 transition-colors"
-                id="closeSidebar">
-                <i class="fas fa-times text-xl"></i>
-            </button>
-
-            <div class="p-6 pt-12">
-                <img id="sidebarImage" src="" alt="" class="w-full h-64 object-cover rounded-xl mb-6">
-
-                <h2 id="sidebarTitle" class="text-2xl font-bold text-custombbg-customBlue mb-4"></h2>
-
-                <div class="flex items-center text-sm text-gray-500 mb-6">
-                    <span class="mr-4"><i class="far fa-calendar-alt mr-1"></i> <span id="sidebarDate"></span></span>
-                    <span><i class="far fa-eye mr-1"></i> <span id="sidebarViews"></span> dilihat</span>
-                </div>
-
-                <div id="sidebarContent" class="text-gray-700 leading-relaxed whitespace-pre-line mb-8"></div>
-
-            </div>
+@foreach ($sections as $section)
+    @if ($section['items']->count())
+    <section class="berita-section relative overflow-hidden">
+        <div class="absolute inset-0 -z-[1] pointer-events-none">
+            <div class="absolute w-96 h-96 bg-orange-100 rounded-full opacity-50 top-20 left-1/9"></div>
+            <div class="absolute w-80 h-80 bg-blue-200 rounded-full opacity-30 top-1/2 right-1/4"></div>
+            <div class="absolute w-72 h-72 bg-orange-100 rounded-full opacity-40 bottom-0 left-1/2"></div>
         </div>
-
-        <main class="container mx-auto px-4 py-8">
-            <div class="flex flex-wrap justify-between items-center mb-8 bg-white p-4 rounded-lg shadow">
-                <div class="mb-4 md:mb-0">
-                    <h2 class="text-xl font-bold text-customBlue">Kumpulan Berita</h2>
-                    <p class="text-gray-600">Temukan informasi terbaru dari sekolah</p>
-                </div>
-
-                <div class="flex flex-wrap gap-2" id="filterButtons">
-                    <button
-                        class="filter-btn {{ $type === 'all' ? 'bg-customBlue text-white' : 'hover:bg-gray-300 text-gray-700' }} px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        data-type="all">Semua</button>
-                    <button
-                        class="filter-btn {{ $type === 'prestasi' ? 'bg-customBlue text-white' : 'hover:bg-gray-300 text-gray-700' }} px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        data-type="prestasi">Prestasi</button>
-                    <button
-                        class="filter-btn {{ $type === 'kegiatan' ? 'bg-customBlue text-white' : 'hover:bg-gray-300 text-gray-700' }} px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        data-type="kegiatan">Kegiatan</button>
-                    <button
-                        class="filter-btn {{ $type === 'pengumuman' ? 'bg-customBlue text-white' : 'hover:bg-gray-300 text-gray-700' }} px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        data-type="pengumuman">Pengumuman</button>
-                    <button
-                        class="filter-btn {{ $type === 'acara' ? 'bg-customBlue text-white' : 'hover:bg-gray-300 text-gray-700' }} px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-                        data-type="acara">Acara</button>
-                </div>
-
-                <div id="loadingIndicator" class="hidden justify-center items-center py-12 w-full">
-                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-customBlue"></div>
-                    <span class="ml-3 text-gray-600">Memuat berita...</span>
-                </div>
-            </div>
-
-            <div id="berita-content" class="transition-opacity duration-300">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch" id="newsGrid">
-                    @foreach ($beritas as $berita)
-                        <div class="news-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full"
-                            data-type="{{ strtolower($berita->type) }}">
-                            <div class="relative">
-                                <img src="{{ !is_null($berita->gambar) ? $assetBase . '/storage/' . $berita->gambar : 'https://placehold.co/600x400' }}"
-                                    alt="{{ $berita->title }}" class="w-full h-48 object-cover">
-                                <div class="absolute top-4 left-4">
-                                    <span class="bg-customOrange text-white px-3 py-1 rounded-full text-xs font-medium">
-                                        {{ $berita->type }}
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="p-6 flex flex-col flex-1">
-                                <div class="flex justify-between text-sm text-gray-500 mb-2">
-                                    <span><i class="far fa-calendar-alt mr-1"></i>
-                                        {{ $berita->created_at->format('d M Y') }}</span>
-                                    <span><i class="far fa-eye mr-1"></i> {{ $berita->views }}</span>
-                                </div>
-
-                                <h3 class="text-xl font-bold text-gray-800 mb-3 break-words line-clamp-2 min-h-[56px]">
-                                    {{ $berita->title }}
-                                </h3>
-
-                                <p class="text-gray-600 mb-4 break-words line-clamp-3 min-h-[72px]">
-                                    {{ Str::limit($berita->deskripsi, 120) }}
-                                </p>
-
-                                <div class="mt-auto">
-                                    <a href="{{ route('berita.show', $berita->id) }}"
-                                        class="inline-block bg-customBlue hover:bg-blue-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all self-start">
-                                        Baca Selengkapnya
-                                    </a>
-                                </div>
-                            </div>
+        <h2 class="berita-title font-bebas">{{ $section['title'] }}</h2>
+        <div class="berita-container">
+            <div class="berita-layout">
+                @php $main = $section['items']->first(); @endphp
+                @if ($main)
+                <div class="berita-main-card scroll-reveal">
+                    <div class="relative overflow-hidden">
+                        <img src="{{ !is_null($main->gambar) ? $assetBase . '/storage/' . $main->gambar : 'https://placehold.co/600x400' }}" alt="{{ $main->title }}" class="berita-main-image">
+                        <div class="berita-badge">{{ $section['title'] }}</div>
+                    </div>
+                    <div class="berita-main-content">
+                        <div class="berita-date">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            {{ $main->created_at->format('d F Y') }}
                         </div>
+                        <h3 class="berita-main-title font-poppins">{{ $main->title }}</h3>
+                        <p class="berita-main-excerpt font-poppins">{{ Str::limit($main->deskripsi, 150) }}</p>
+                        <a href="{{ route('berita.show', $main->id) }}" class="berita-read-more font-poppins">Baca Selengkapnya →</a>
+                    </div>
+                </div>
+                @endif
+                <div class="berita-side-container">
+                    @foreach ($section['items']->skip(1)->take(2) as $item)
+                    <div class="berita-side-card scroll-reveal">
+                        <img src="{{ !is_null($item->gambar) ? $assetBase . '/storage/' . $item->gambar : 'https://placehold.co/600x400' }}" alt="{{ $item->title }}" class="berita-side-image">
+                        <div class="berita-side-content">
+                            <div>
+                                <div class="berita-date">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                    {{ $item->created_at->format('d F Y') }}
+                                </div>
+                                <h4 class="berita-side-title font-poppins">{{ $item->title }}</h4>
+                                <p class="berita-side-excerpt font-poppins">{{ Str::limit($item->deskripsi, 100) }}</p>
+                            </div>
+                            <a href="{{ route('berita.show', $item->id) }}" class="berita-read-more">Baca Selengkapnya →</a>
+                        </div>
+                    </div>
                     @endforeach
                 </div>
-
-                <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
-                    {{ $beritas->links('pagination::tailwind') }}
-                </div>
-
             </div>
-        </main>
-    </div>
+        </div>
+    </section>
+    @endif
+@endforeach
+</div>
 
-    <script>
-        // 1. Script Filter Kategori Berita
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const type = button.getAttribute('data-type');
-
-                    filterButtons.forEach(btn => btn.classList.remove('bg-customBlue',
-                        'text-white'));
-                    button.classList.add('bg-customBlue', 'text-white');
-
-                    // Ambil ulang elemen agar terbaca setelah halaman berganti via AJAX
-                    const currentNewsCards = document.querySelectorAll(
-                    '#berita-content .news-card');
-
-                    currentNewsCards.forEach(card => {
-                        const cardType = card.getAttribute('data-type');
-                        if (type === 'all' || cardType === type) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-
-    <script>
-        // 2. Script Bawaan Sidebar
-        function openSidebar(image, title, date, views, content) {
-            document.getElementById('sidebarImage').src = image;
-            document.getElementById('sidebarTitle').textContent = title;
-            document.getElementById('sidebarDate').textContent = date;
-            document.getElementById('sidebarViews').textContent = views;
-            document.getElementById('sidebarContent').textContent = content;
-
-            document.getElementById('sidebarOverlay').classList.add('active');
-            document.getElementById('newsSidebar').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSidebar() {
-            document.getElementById('sidebarOverlay').classList.remove('active');
-            document.getElementById('newsSidebar').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.addEventListener('click', function(e) {
-                const button = e.target.closest('.read-more-btn');
-                if (button) {
-                    const image = button.getAttribute('data-image');
-                    const title = button.getAttribute('data-title');
-                    const date = button.getAttribute('data-date');
-                    const views = button.getAttribute('data-views');
-                    const content = button.getAttribute('data-content');
-
-                    openSidebar(image, title, date, views, content);
-                }
-            });
-
-            document.getElementById('closeSidebar').addEventListener('click', closeSidebar);
-            document.getElementById('sidebarOverlay').addEventListener('click', closeSidebar);
-
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') closeSidebar();
-            });
-        });
-    </script>
-
-    <script>
-        // 3. Script AJAX Pagination (Disempurnakan dari versi Prestasi)
-        document.addEventListener('DOMContentLoaded', function() {
-            const beritaContent = document.getElementById('berita-content');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-
-            function loadPage(url) {
-                // Tampilkan animasi loading
-                loadingIndicator.classList.remove('hidden');
-                loadingIndicator.classList.add('flex');
-                beritaContent.classList.add('opacity-50');
-
-                fetch(url, {
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest'
-                        }
-                    })
-                    .then(response => {
-                        if (!response.ok) throw new Error('Network response error');
-                        return response.text();
-                    })
-                    .then(html => {
-                        // Gunakan DOMParser agar struktur HTML aman dari pemotongan (mencegah fallback refresh)
-                        const parser = new DOMParser();
-                        const doc = parser.parseFromString(html, 'text/html');
-                        const newBeritaContent = doc.querySelector('#berita-content');
-
-                        if (newBeritaContent) {
-                            // Timpa konten lama dengan konten halaman baru
-                            beritaContent.innerHTML = newBeritaContent.innerHTML;
-
-                            // Update URL di address bar tanpa refresh
-                            window.history.pushState({}, '', url);
-
-                            // Panggil fungsi untuk mempertahankan filter kategori
-                            applyActiveFilter();
-
-                            // Scroll kembali ke atas dengan halus
-                            setTimeout(() => {
-                                const filterSection = document.querySelector(
-                                    '.flex.flex-wrap.justify-between.items-center.mb-8.bg-white');
-                                if (filterSection) {
-                                    filterSection.scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'start'
-                                    });
-                                }
-                            }, 100);
-                        } else {
-                            throw new Error('ID #berita-content tidak ditemukan di response');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('AJAX Error:', error);
-                        // Jika AJAX gagal karena alasan apapun, sistem akan memuat halaman secara normal
-                        window.location.href = url;
-                    })
-                    .finally(() => {
-                        // Sembunyikan loading
-                        loadingIndicator.classList.add('hidden');
-                        loadingIndicator.classList.remove('flex');
-                        beritaContent.classList.remove('opacity-50');
-                    });
-            }
-
-            // Fungsi khusus untuk memastikan kartu berita sesuai dengan filter yang aktif
-            function applyActiveFilter() {
-                const activeFilterBtn = document.querySelector('.filter-btn.bg-customBlue');
-                if (activeFilterBtn) {
-                    const activeType = activeFilterBtn.getAttribute('data-type');
-                    const newCards = document.querySelectorAll('#berita-content .news-card');
-
-                    newCards.forEach(card => {
-                        if (activeType === 'all' || card.getAttribute('data-type') === activeType) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                }
-            }
-
-            // Penangkapan klik yang lebih presisi khusus area Pagination
-            document.addEventListener('click', function(e) {
-                // Cek dulu apakah user benar-benar mengklik area di dalam container pagination
-                const paginationContainer = e.target.closest('#pagination-container');
-
-                if (paginationContainer) {
-                    // Jika iya, cari tag <a> nya (berjaga-jaga jika user klik angka di dalam tag span)
-                    const link = e.target.closest('a');
-
-                    if (link && link.href) {
-                        e.preventDefault(); // Matikan refresh bawaan browser
-                        loadPage(link.href); // Mulai proses AJAX
-                    }
-                }
-            });
-
-            // Tangani tombol Back / Forward di browser agar tidak rusak
-            window.addEventListener('popstate', function() {
-                loadPage(window.location.href);
-            });
-        });
-    </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('revealed'));
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    revealElements.forEach(el => observer.observe(el));
+});
+</script>
 </x-layout>

@@ -591,3 +591,567 @@ body {
     align-items: center;
     gap: 1rem;
 }
+
+/* C's Custom Styles */
+.font-bebas {
+    font-family: 'Bebas Neue', cursive;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Styles from C */
+.dropdown-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(249, 115, 22, 0.1),
+            transparent);
+    transition: left 0.6s;
+}
+
+.dropdown-item:hover::before {
+    left: 100%;
+}
+
+.dropdown-item span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.dropdown-item:hover span {
+    transform: translateX(5px);
+}
+
+.menu-slide {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.menu-slide.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes pulse-grow {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse-grow:hover {
+    animation: pulse-grow 0.5s;
+}
+
+/* Footer Styles from C */
+.footer-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #f97316;
+    transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+    width: 100%;
+}
+
+.social-icon {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.map-container {
+    transition: all 0.3s ease;
+    filter: grayscale(0.2);
+}
+
+.map-container:hover {
+    filter: grayscale(0);
+    transform: scale(1.02);
+}
+
+.section-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.5), transparent);
+}
+
+@keyframes shine {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.shine-animate {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shine 8s infinite;
+}
+
+/* Swiper Styles from C */
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-pagination-bullet {
+    background: white !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* Landing Page - Card Animations */
+.card-active {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 40;
+    filter: brightness(1);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-behind {
+    transform: translateX(100px) scale(0.92);
+    opacity: 1;
+    z-index: 30;
+    filter: brightness(0.9);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-far-behind {
+    transform: translateX(200px) scale(0.84);
+    opacity: 1;
+    z-index: 20;
+    filter: brightness(0.8);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-more-behind {
+    transform: translateX(300px) scale(0.76);
+    opacity: 1;
+    z-index: 10;
+    filter: brightness(0.7);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bg-circle {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+@media (min-width: 1024px) {
+    .bg-circle {
+        width: 28rem;
+        height: 28rem;
+    }
+}
+
+.bg-orange-blur {
+    background: rgba(255, 179, 132, 0.6);
+}
+
+.bg-blue-blur {
+    background: rgba(174, 219, 228, 0.6);
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+.swiper-slide > div {
+    position: relative;
+    z-index: 0;
+}
+
+.swiper-slide-industri {
+    width: auto;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        height: auto !important;
+        min-height: 400px;
+    }
+
+    .card {
+        height: auto !important;
+        min-height: 380px;
+        margin-bottom: 20px;
+    }
+
+    .card-active {
+        transform: translateX(0) scale(1) !important;
+        position: relative !important;
+        margin: 0 auto;
+    }
+
+    .card-behind,
+    .card-far-behind,
+    .card-more-behind {
+        display: none !important;
+    }
+
+    .redirect-department {
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px !important;
+        font-size: 14px !important;
+        margin-top: 1rem;
+    }
+}
+
+.redirect-department {
+    position: relative !important;
+    z-index: 50 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Berita Page Styles from C */
+.berita-section {
+    padding: 4rem 1rem;
+    background: transparent;
+    position: relative;
+}
+
+.berita-title {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #1f2937, #374151);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+    position: relative;
+    text-align: center;
+}
+
+.berita-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #f97316, #fdba74);
+    border-radius: 2px;
+}
+
+.berita-container {
+    width: 98%;
+    max-width: none;
+    margin: 0 auto;
+    position: relative;
+}
+
+.berita-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.berita-main-card {
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    border: 1px solid #f3f4f6;
+    height: fit-content;
+    position: relative;
+}
+
+.berita-main-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: #f97316;
+}
+
+.berita-main-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.berita-main-card:hover .berita-main-image {
+    transform: scale(1.05);
+}
+
+.berita-main-content {
+    padding: 1.5rem;
+}
+
+.berita-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1f2937;
+    line-height: 1.3;
+}
+
+.berita-main-excerpt {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    display: block;
+    overflow: visible;
+    white-space: normal;
+}
+
+.berita-side-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.berita-side-card {
+    display: flex;
+    height: 245px;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f3f4f6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.berita-side-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #f97316;
+}
+
+.berita-side-image {
+    width: 50%;
+    min-width: 200px;
+    max-width: 200px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.berita-side-card:hover .berita-side-image {
+    transform: scale(1.05);
+}
+
+.berita-side-content {
+    flex: 1;
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 210px;
+}
+
+.berita-date {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 0.3rem;
+}
+
+.berita-side-title {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.berita-side-excerpt {
+    color: #6b7280;
+    line-height: 1.5;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.berita-read-more {
+    font-size: 0.85rem;
+    color: #f97316;
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: color 0.3s ease;
+}
+
+.berita-read-more:hover {
+    text-decoration: underline;
+    color: #ea580c;
+}
+
+.berita-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 3;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 1024px) {
+    .berita-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .berita-side-container {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .berita-side-card {
+        flex: 1;
+        height: auto;
+    }
+
+    .berita-side-image {
+        width: 120px;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .berita-section {
+        padding: 3rem 1rem;
+    }
+
+    .berita-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .berita-main-image {
+        height: 220px;
+    }
+
+    .berita-main-title {
+        font-size: 1.3rem;
+    }
+
+    .berita-main-content {
+        padding: 1.25rem;
+    }
+
+    .berita-side-container {
+        flex-direction: column;
+    }
+
+    .berita-side-card {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .berita-side-image {
+        width: 100px;
+        height: 100%;
+    }
+
+    .berita-side-content {
+        padding: 1rem;
+    }
+
+    .berita-side-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .berita-section {
+        padding: 2rem 1rem;
+    }
+
+    .berita-title {
+        font-size: 1.75rem;
+    }
+
+    .berita-main-image {
+        height: 180px;
+    }
+
+    .berita-side-card {
+        flex-direction: row;
+    }
+
+    .berita-side-image {
+        width: 80px;
+        height: 100%;
+    }
+}
