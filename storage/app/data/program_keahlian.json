@@ -1,0 +1,25 @@
+{
+    "departemen_tik": [
+        "RPL",
+        "TKJ (Mikrotik Class)",
+        "Multimedia",
+        "Animasi (RolePlay Class)"
+    ],
+    "departemen_pemesinan": [
+        "Teknik Pengelasan (Transformer Class)",
+        "Teknik Pemesinan (Partnership Class)",
+        "Manajemen Niaga (Alfamart Class)"
+    ],
+    "departemen_otomotif": [
+        "Teknik Kendaraan Ringan (Toyota Class)",
+        "Teknik Sepeda Motor (Suzuki Class)",
+        "Bodi Otomotif (Morodadi Class)"
+    ],
+    "departemen_elektronika": [
+        "Elektronika Industri",
+        "Audio-Video (LG Class)",
+        "Hotel Engineering (Swiss Class)",
+        "PLN Distribusi",
+        "PJB Class (Kimia, Mekanik, Instrumen, Listrik)"
+    ]
+}

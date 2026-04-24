@@ -1,0 +1,56 @@
+{
+    "nama_sekolah": "SMK PGRI 3 Malang",
+    "alamat": "Jl. Surabaya No.7, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119",
+    "telepon": "(0341) 362065",
+    "email": "info@smkpgri3malang.sch.id",
+    "website": "https://smkpgri3malang.sch.id",
+    "akreditasi": "A",
+    "kurikulum": "Kurikulum 2013 Revisi",
+    "program_keahlian": [
+        {
+            "nama": "Teknik Otomotif",
+            "kode": "TKRO",
+            "deskripsi": "Program keahlian yang mempelajari teknik kendaraan roda empat"
+        },
+        {
+            "nama": "Teknik Elektro",
+            "kode": "TET",
+            "deskripsi": "Program keahlian yang mempelajari teknik instalasi listrik dan elektronik"
+        },
+        {
+            "nama": "Teknik Pemesinan",
+            "kode": "TPM",
+            "deskripsi": "Program keahlian yang mempelajari teknik permesinan dan fabrikasi"
+        },
+        {
+            "nama": "Teknologi Informasi dan Komunikasi",
+            "kode": "TIK",
+            "deskripsi": "Program keahlian yang mempelajari teknologi informasi dan komunikasi"
+        }
+    ],
+    "ekstrakurikuler": [
+        {"nama": "Pramuka", "keterangan": "Organisasi kepanduan"},
+        {"nama": "Paskibra", "keterangan": "Pasukan pengibar bendera"},
+        {"nama": "PMR", "keterangan": "Palang Merah Remaja"},
+        {"nama": "Futsal", "keterangan": "Olahraga futsal"},
+        {"nama": "Basket", "keterangan": "Olahraga basket"},
+        {"nama": "Volley", "keterangan": "Olahraga volley"},
+        {"nama": "Seni Tari", "keterangan": "Seni tari tradisional"},
+        {"nama": "Band", "keterangan": "Seni musik band"},
+        {"nama": "Jurnalistik", "keterangan": "Karya jurnalistik"},
+        {"nama": "Robotika", "keterangan": "Teknologi robotika"}
+    ],
+    "fasilitas": [
+        "Laboratorium Komputer",
+        "Laboratorium Bahasa",
+        "Laboratorium Listrik",
+        "Laboratorium Otomotif",
+        "Laboratorium Mesin",
+        "Perpustakaan",
+        "Aula",
+        "Lapangan Olahraga",
+        "Masjid",
+        "Kantin",
+        "Wifi Campus"
+    ]
+}

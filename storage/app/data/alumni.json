@@ -1,0 +1,55 @@
+[
+    {
+        "nama": "Khoko Rama Viera",
+        "angkatan": 2018,
+        "pekerjaan": "Mandor HSE di PT. WIKA"
+    },
+    {
+        "nama": "Aditya Tantra",
+        "angkatan": 2018,
+        "pekerjaan": "Engineer di Daihatsu Motor Co. Ltd, Jepang"
+    },
+    {
+        "nama": "Reza Abi Utomo",
+        "angkatan": 2017,
+        "pekerjaan": "Teknisi di PT. JABC"
+    },
+    {
+        "nama": "Choiriatul Aulia",
+        "angkatan": 2018,
+        "pekerjaan": "Operator Produksi di PT. Surabaya Autocomp Indonesia"
+    },
+    {
+        "nama": "Febrianto Nugroho",
+        "angkatan": 2017,
+        "pekerjaan": "Teknisi di PT. JABC"
+    },
+    {
+        "nama": "Ahmad Fauzan",
+        "angkatan": 2018,
+        "pekerjaan": "Teknisi Elektronika di Rekavitronica"
+    },
+    {
+        "nama": "Tiyyoh Fahmi",
+        "angkatan": 2017,
+        "pekerjaan": "Developer di Inovasi Tjarko Buana (ITB)"
+    },
+    {
+        "nama": "Ximent Sultan",
+        "angkatan": 2017,
+        "pekerjaan": "Supervisor Proyek di PT. Bangung Dedeko Makmur"
+    },
+    {
+        "nama": "Edsel Parama Mustapa",
+        "angkatan": 2024,
+        "prestasi": "Medali Emas ASEAN WorldSkill 2025 bidang IT Software Solution for Business",
+        "training": "BINUS Training Center",
+        "target": "WorldSkill Asia 2026 di China"
+    },
+    {
+        "nama": "Risca Revan Suasmara",
+        "angkatan": 2024,
+        "prestasi": "Medali Perunggu ASEAN WorldSkill 2025 bidang IT",
+        "pengalaman": "Latihan intensif dan kompetisi internasional"
+    }
+]
