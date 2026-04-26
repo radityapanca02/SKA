@@ -16,17 +16,17 @@ class RecommendationController extends Controller
             return response()->json(['error' => 'Keyword wajib diisi'], 400);
         }
 
-        $prompt = "Berdasarkan minat berikut: {$keyword}, rekomendasikan 2 jurusan SMK: satu jurusan utama, yang kedua jurusan alternatif yang paling cocok.
+        // 1. System Prompt (Berisi instruksi, aturan, dan struktur output)
+        $systemPrompt = "Anda adalah AI sistem pakar perekomendasi jurusan SMK PGRI 3 MALANG.
+Tugas Anda adalah merekomendasikan jurusan berdasarkan input minat siswa.
 
-⚠️ Aturan:
-1. Jika yang di input berhubungan tindak hacking, cybersecurity, jaringan maka akan memilih jurusan TKJ
-1.1 Jika yang di input berhubungan dengan Sound maka akan di rujuk ke jurusan TE & AV
-2. Jika minat sesuai dengan salah satu jurusan SMK PGRI 3 MALANG berikut:
+⚠️ ATURAN UTAMA:
+1. HANYA balas dengan format JSON valid tanpa teks pengantar, penutup, atau markdown block.
+2. Jika input berhubungan dengan hacking, cybersecurity, atau jaringan -> rujuk ke TKJ.
+3. Jika input berhubungan dengan Sound/Audio -> rujuk ke TE & AV.
+4. Jika input selain jurusan atau hal yang tidak relevan dengan sekolah, abaikan minat tersebut dan kembalikan JSON 'Tidak ditemukan' dan alternatif null.
 
-⚠️ Aturan Utama:
-1. Jika user menginput selain jurusan atau hal yang tidak relevan abaikan
-
-** Departemen / Kategori TIK: **
+** Kategori TIK: **
 - RPL (Rekayasa Perangkat Lunak)
 - DKV (Desain Komunikasi Visual)
 - BP (Broadcasting dan Perfilman)
@@ -34,91 +34,89 @@ class RecommendationController extends Controller
 - BDP (Bisnis Digital & Pemasaran)
 - TKJ (Teknik Komputer dan Jaringan)
 
-** Departemen / Kategori Kelistrikan: **
+** Kategori Kelistrikan: **
 - TE & AV (Teknik Elektronika & Audio Video)
 - TL (Teknik Pembangkit Tenaga Listrik)
 - TEI (Teknik Elektronika Industri)
 - TKI (Teknik Kimia Industri)
 
-** Departemen / Kategori Otomotif: **
+** Kategori Otomotif: **
 - TP (Teknik Permesinan)
 - TPL (Teknik Pengelasan)
 - TBSM (Teknik Bisnis Sepeda Motor)
 - TKR (Teknik Kendaraan Ringan)
 - BO (Teknik Perbaikan Body Otomotif)
 
-BALAS DENGAN FORMAT JSON BERIKUT:
+FORMAT JSON YANG DIHARAPKAN:
 {
-\"jurusan_utama\": {
+  \"jurusan_utama\": {
     \"name\": \"Nama Jurusan\",
     \"department\": \"Kategori\",
     \"description\": \"Penjelasan singkat kenapa cocok\"
-},
-\"jurusan_alternatif\": {
+  },
+  \"jurusan_alternatif\": {
     \"name\": \"Nama Jurusan\",
     \"department\": \"Kategori\",
     \"description\": \"Penjelasan singkat kenapa cocok\"
-}
-}
+  }
+}";
 
-Jika minat TIDAK relevan, balas dengan:
-{
-\"jurusan_utama\": {
-    \"name\": \"Tidak ditemukan\",
-    \"department\": \"N/A\",
-    \"description\": \"Penjelasan singkat kenapa tidak relevan\"
-},
-\"jurusan_alternatif\": null
-}
-
-HANYA kembalikan JSON, tanpa teks lain.";
+        // 2. User Prompt (Hanya berisi input spesifik dari user)
+        $userPrompt = "Minat saya: {$keyword}";
 
         try {
+            // 3. Request ke Groq menggunakan pattern OpenAI
             $response = Http::timeout(30)->withHeaders([
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
             ])->post('https://api.groq.com/openai/v1/chat/completions', [
-                'model' => 'llama-3.3-70b-versatile',
-                "contents" => [
+                'model' => env('GROQ_MODEL', 'llama-3.3-70b-versatile'),
+                'messages' => [
                     [
-                        "parts" => [["text" => $prompt]]
-                    ]
+                        'role' => 'system',
+                        'content' => $systemPrompt,
+                    ],
+                    [
+                        'role' => 'user',
+                        'content' => $userPrompt,
+                    ],
                 ],
-                "generationConfig" => [
-                    "temperature" => 0.7,
-                    "topK" => 40,
-                    "topP" => 0.95,
-                    "maxOutputTokens" => 1024,
-                ]
+                'temperature' => 0.7,
+                'max_tokens' => 1024,
+                'response_format' => ['type' => 'json_object'] // FITUR PRO: Memaksa model Groq mengembalikan JSON murni
             ]);
 
             if ($response->failed()) {
-                Log::error('Gemini API Error:', ['response' => $response->body()]);
+                Log::error('Groq API Error:', ['response' => $response->body()]);
                 return response()->json(['error' => 'Gagal menghubungi AI service'], 500);
             }
 
             $result = $response->json();
-            Log::info('Gemini Response:', $result);
 
-            if (empty($result['candidates'][0]['content']['parts'][0]['text'])) {
+            // 4. Parsing response menggunakan struktur OpenAI/Groq (choices -> message -> content)
+            if (empty($result['choices'][0]['message']['content'])) {
+                Log::error('Empty AI Response:', $result);
                 return response()->json([
-                    'error' => 'Tidak ada hasil dari Gemini',
+                    'error' => 'Tidak ada hasil dari Groq AI',
                     'debug' => $result
                 ], 500);
             }
 
-            $aiText = $result['candidates'][0]['content']['parts'][0]['text'];
+            $aiText = $result['choices'][0]['message']['content'];
+
+            // 5. Pembersihan teks (Berjaga-jaga jika AI masih menyelipkan markdown ```json)
             $cleanText = preg_replace('/```(json)?|```/', '', $aiText);
             $cleanText = trim($cleanText);
 
             $parsed = json_decode($cleanText, true);
 
+            // 6. Validasi dan Return JSON ke Frontend
             if (json_last_error() === JSON_ERROR_NONE) {
                 return response()->json($parsed);
             } else {
+                Log::error('JSON Parse Error:', ['raw_text' => $cleanText, 'error' => json_last_error_msg()]);
                 return response()->json([
                     'error' => 'Gagal parsing JSON dari AI',
-                    'raw_text' => $cleanText,
                     'json_error' => json_last_error_msg()
                 ], 500);
             }
