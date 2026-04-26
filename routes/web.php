@@ -21,6 +21,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\PrestasiController;
 use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\RecommendationController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes dengan tracking visitor
@@ -86,6 +87,7 @@ Route::post('/chat/ask', [ChatbotController::class, 'ask'])->name('chat.ask');
 Route::get('/chat/history', [ChatbotController::class, 'getHistory'])->name('chat.history');
 Route::delete('/chat/clear-history', [ChatbotController::class, 'clearHistory'])->name('chat.clear-history');
 Route::get('/chat/check-session', [ChatbotController::class, 'checkSession'])->name('chat.check-session');
+Route::post('/api/gemini', [RecommendationController::class, 'getRecommendation']);
 
 //chart data
 Route::get('/api/chart-data', [PendaftaranController::class, 'getChartData']);
