@@ -76,7 +76,7 @@ HANYA kembalikan JSON, tanpa teks lain.";
         try {
             $response = Http::timeout(30)->withHeaders([
                 'Content-Type' => 'application/json',
-            ])->post("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . env('GEMINI_API_KEY'), [
+            ])->post(env('GEMINI_ENDPOINT') . env('GEMINI_API_KEY'), [
                         "contents" => [
                             [
                                 "parts" => [["text" => $prompt]]
