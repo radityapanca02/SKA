@@ -76,19 +76,21 @@ HANYA kembalikan JSON, tanpa teks lain.";
         try {
             $response = Http::timeout(30)->withHeaders([
                 'Content-Type' => 'application/json',
-            ])->post(env('GEMINI_ENDPOINT') . env('GEMINI_API_KEY'), [
-                        "contents" => [
-                            [
-                                "parts" => [["text" => $prompt]]
-                            ]
-                        ],
-                        "generationConfig" => [
-                            "temperature" => 0.7,
-                            "topK" => 40,
-                            "topP" => 0.95,
-                            "maxOutputTokens" => 1024,
-                        ]
-                    ]);
+                'Authorization' => 'Bearer ' . env('GROQ_API_KEY'),
+            ])->post('https://api.groq.com/openai/v1/chat/completions', [
+                'model' => 'llama-3.3-70b-versatile',
+                "contents" => [
+                    [
+                        "parts" => [["text" => $prompt]]
+                    ]
+                ],
+                "generationConfig" => [
+                    "temperature" => 0.7,
+                    "topK" => 40,
+                    "topP" => 0.95,
+                    "maxOutputTokens" => 1024,
+                ]
+            ]);
 
             if ($response->failed()) {
                 Log::error('Gemini API Error:', ['response' => $response->body()]);
