@@ -10,9 +10,9 @@
     @vite(['resources/css/app.css', 'resources/ts/app.ts'])
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    
+
     <!-- C's CDNs for migration -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     @production
     <link rel="stylesheet" href="{{ $assetBase }}/build/assets/app.css">
     @endproduction
-    
+
     @stack('styles')
 </head>
 

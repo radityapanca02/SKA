@@ -199,7 +199,7 @@ export class JurusanChartManager {
                                     percentage > 0
                                         ? percentage.toFixed(1)
                                         : "0.0";
-                                return `${label}: ${value} (${percentageText}%)`;
+                                return ` ${percentageText}%`;
                             },
                         },
                     },
