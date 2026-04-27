@@ -173,7 +173,7 @@
                 </div>
 
                 <!-- Pagination Links -->
-                <div class="flex justify-center mt-6" id="pagination-links">
+                <div class="block justify-center mt-6" id="pagination-links">
                     {{ $prestasis->links('pagination::tailwind') }}
                 </div>
             </div>

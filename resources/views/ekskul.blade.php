@@ -34,7 +34,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-center mt-8 space-x-2" id="pagination-container">
+                    <div class="block justify-center mt-8 space-x-2" id="pagination-container">
                         {{ $ekskuls->links('pagination::tailwind') }}
                     </div>
                 </div>

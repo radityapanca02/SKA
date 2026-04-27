@@ -95,7 +95,7 @@
                     </div>
 
                     @if($alumnis->hasPages())
-                        <div class="flex justify-center mt-12 space-x-2" id="pagination-controls">
+                        <div class="block justify-center mt-12 space-x-2" id="pagination-controls">
                             {{ $alumnis->links('pagination::tailwind') }}
                         </div>
                     @endif
