@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - SMK PGRI 3 Malang</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flyonui/dist/flyonui.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="{{ $assetBase . '/assets/skariga300rbg.png' }}" type="image/x-icon">
 </head>
