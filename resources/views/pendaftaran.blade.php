@@ -40,7 +40,7 @@
                     <div class="flex flex-col md:flex-row justify-center items-center md:items-center gap-10">
                         <!-- Chart -->
                         <div class="flex-1 flex justify-center">
-                            <div class="relative w-full max-w-[700px] h-[400px]">
+                            <div class="relative w-full max-w-[700px] h-[400px]" style="position: relative; height: 400px; width: 100%;">
                                 <canvas id="chartGabungan" class="w-full h-full"></canvas>
                             </div>
                         </div>

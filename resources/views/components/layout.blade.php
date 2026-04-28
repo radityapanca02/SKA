@@ -113,7 +113,7 @@
     <noscript>JavaScript anda sekarang sedang dimatikan<br>Mohon aktifkan JavaScript anda agar website ini dapat
         berjalan.</noscript>
 
-    <script>
+    {{-- <script>
     window.appConfig = {
         primaryDomain: 'smkpgri3mlg.jh-beon.cloud',
         secondaryDomain: 'smkpgri3mlg.web.id',
@@ -124,7 +124,7 @@
                 this.currentDomain === 'www.' + this.primaryDomain;
         }
     };
-    </script>
+    </script> --}}
 
     @stack('scripts')
 </body>
