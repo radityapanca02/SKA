@@ -49,7 +49,7 @@
                         <!-- Box 1 -->
                         <div>
                             <div
-                                class="flex items-center gap-2 cursor-default bg-customOrange text-white rounded-lg px-4 py-3 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                                class="flex items-center gap-2 cursor-default bg-orange-500 text-white rounded-lg px-4 py-3 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                                 <i class="fas fa-award"></i>
                                 <span class="font-semibold">Sekolah Terakreditasi A</span>
                             </div>
@@ -61,7 +61,7 @@
                         <!-- Box 2 -->
                         <div>
                             <div
-                                class="flex items-center gap-2 cursor-default bg-customOrange text-white rounded-lg px-4 py-3 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                                class="flex items-center gap-2 cursor-default bg-orange-500 text-white rounded-lg px-4 py-3 shadow transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                                 <i class="fas fa-calendar-check"></i>
                                 <span class="font-semibold">Success By Discipline</span>
                             </div>
@@ -77,7 +77,7 @@
         <!-- Visi -->
         <section class="w-full mx-auto pt-6 pb-10 mt-12">
             <div
-                class="bg-customOrange rounded-2xl shadow-lg overflow-visible relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                class="bg-orange-500 rounded-2xl shadow-lg overflow-visible relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                 <div class="grid md:grid-cols-2 items-start relative py-12">
 
                     <div class="relative flex justify-center items-start w-full">
@@ -141,7 +141,7 @@
             <div class="grid sm:grid-cols-3 gap-6 mt-12">
                 <!-- Box 1 -->
                 <div
-                    class="flex items-center justify-center gap-3 bg-customOrange text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                    class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                     <img src="{{ $assetBase . '/assets/grad.png' }}"
                         class="w-7 h-7 transition-transform duration-300 hover:scale-105 invert" alt="graduation"
                         loading="lazy">
@@ -150,7 +150,7 @@
 
                 <!-- Box 2 -->
                 <div
-                    class="flex items-center justify-center gap-3 bg-customOrange text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                    class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                     <img src="{{ $assetBase . '/assets/hand shake.png' }}"
                         class="w-7 h-7 transition-transform duration-300 hover:scale-105 invert" alt="handshake"
                         loading="lazy">
@@ -159,7 +159,7 @@
 
                 <!-- Box 3 -->
                 <div
-                    class="flex items-center justify-center gap-3 bg-customOrange text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-customOrange/50">
+                    class="flex items-center justify-center gap-3 bg-orange-500 text-white rounded-lg px-6 py-4 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/50">
                     <img src="{{ $assetBase . '/assets/trophy.png' }}"
                         class="w-7 h-7 transition-transform duration-300 hover:scale-105 invert" alt="trophy"
                         loading="lazy">
@@ -169,17 +169,17 @@
         </section>
 
         <!-- Profil Lengkap -->
-        <section class="mx-auto py-16">
-            <h2 class="text-5xl font-bold text-center mb-12">Profil Lengkap SKARIGA</h2>
+        <section class="mx-auto py-16 px-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Profil Lengkap SKARIGA</h2>
+
             <div
-                class="relative w-full h-full max-h-52 sm:max-h-80 md:max-h-96 lg:max-h-[800px] aspect-square mx-auto rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                class="relative w-full aspect-video mx-auto rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-black">
                 <iframe
                     src="{{ $profil->youtubeSrc }}?si=JYpD_LbCAMgLP_zM&vq=hd480&modestbranding=1&rel=0&playsinline=1"
                     title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                    class="absolute inset-0 w-full h-full object-cover rounded-2xl">
-                    <!-- vq=hd<res> -->
+                    class="absolute inset-0 w-full h-full">
                 </iframe>
             </div>
         </section>
