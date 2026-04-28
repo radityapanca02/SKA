@@ -771,15 +771,12 @@ export class JurusanChartManager {
     }
 }
 
-// Fungsi utama chart gabungan (existing)
 export async function initChartGabungan(): Promise<void> {
     const canvas = document.getElementById("chartGabungan") as HTMLCanvasElement | null;
     if (!canvas) return;
 
-    // SOLUSI 1: Pastikan parent memiliki dimensi sebelum menggambar
     const container = canvas.parentElement;
     if (container) {
-        // Jika parent lebarnya 0, kita tunggu frame berikutnya
         if (container.clientWidth === 0) {
             setTimeout(() => initChartGabungan(), 100);
             return;
@@ -791,7 +788,6 @@ export async function initChartGabungan(): Promise<void> {
         if (!response.ok) throw new Error("Gagal mengambil data");
         const chartData = await response.json();
 
-        // SOLUSI 2: Hancurkan chart lama jika ada (mencegah tumpang tindih)
         const existingChart = Chart.getChart(canvas);
         if (existingChart) {
             existingChart.destroy();
