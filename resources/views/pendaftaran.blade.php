@@ -41,7 +41,7 @@
                         <!-- Chart -->
                         <div class="flex-1 flex justify-center">
                             <div class="relative w-full max-w-[700px] h-[400px]" style="position: relative; height: 400px; width: 100%;">
-                                <canvas id="chartGabungan" class="w-full h-full"></canvas>
+                                <canvas id="chartGabungan" class="w-full h-full" style="display: block; box-sizing: border-box; height: 400px; width: 100%;"></canvas>
                             </div>
                         </div>
 
