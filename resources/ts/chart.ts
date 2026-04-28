@@ -763,7 +763,7 @@ export class JurusanChartManager {
         });
         this.sectionTimers = {};
 
-        this.hideViewingNotification();
+        // this.hideViewingNotification();
         const autoNotification = document.querySelector(
             ".auto-increment-notification"
         );
@@ -773,16 +773,29 @@ export class JurusanChartManager {
 
 // Fungsi utama chart gabungan (existing)
 export async function initChartGabungan(): Promise<void> {
-    const canvas = document.getElementById(
-        "chartGabungan"
-    ) as HTMLCanvasElement | null;
-    if (!canvas) {
-        return;
+    const canvas = document.getElementById("chartGabungan") as HTMLCanvasElement | null;
+    if (!canvas) return;
+
+    // SOLUSI 1: Pastikan parent memiliki dimensi sebelum menggambar
+    const container = canvas.parentElement;
+    if (container) {
+        // Jika parent lebarnya 0, kita tunggu frame berikutnya
+        if (container.clientWidth === 0) {
+            setTimeout(() => initChartGabungan(), 100);
+            return;
+        }
     }
 
     try {
         const response = await fetch("/api/chart-data");
+        if (!response.ok) throw new Error("Gagal mengambil data");
         const chartData = await response.json();
+
+        // SOLUSI 2: Hancurkan chart lama jika ada (mencegah tumpang tindih)
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) {
+            existingChart.destroy();
+        }
 
         new Chart(canvas, {
             type: "line",
@@ -796,10 +809,9 @@ export async function initChartGabungan(): Promise<void> {
                         backgroundColor: "rgba(249, 115, 22, 0.1)",
                         borderWidth: 3,
                         fill: true,
-                        tension: 0,
-                        pointRadius: 0,
-                        pointHitRadius: 10,
-                        pointHoverRadius: 5,
+                        tension: 0.3, // Sedikit lengkungan agar lebih estetik
+                        pointRadius: 4, // Munculkan titik kecil agar user tahu ada data
+                        pointHoverRadius: 6,
                         pointHoverBackgroundColor: "#f97316",
                     },
                     {
@@ -809,64 +821,51 @@ export async function initChartGabungan(): Promise<void> {
                         backgroundColor: "rgba(59, 130, 246, 0.1)",
                         borderWidth: 3,
                         fill: true,
-                        tension: 0,
-                        pointRadius: 0,
-                        pointHitRadius: 10,
-                        pointHoverRadius: 5,
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
                         pointHoverBackgroundColor: "#3b82f6",
                     },
                 ],
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: false, // WAJIB: Agar mengikuti tinggi parent (400px)
                 interaction: {
-                    mode: "nearest",
+                    mode: "index", // 'index' lebih enak dilihat untuk perbandingan pendaftar vs diterima
                     intersect: false,
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
                         grace: '10%',
-                        grid: {
-                            color: "rgba(0,0,0,0.05)",
-                        },
+                        grid: { color: "rgba(0,0,0,0.05)" },
                         title: {
                             display: true,
                             text: "Jumlah Siswa",
-                            color: "#374151",
-                            font: {
-                                size: 18,
-                                weight: "bold",
-                            },
+                            font: { size: 14, weight: "bold" },
                         },
                     },
                     x: {
-                        grid: {
-                            color: "rgba(0,0,0,0.05)",
-                        },
+                        grid: { display: false }, // X-axis biasanya lebih bersih tanpa grid vertikal
                         title: {
                             display: true,
                             text: "Tahun",
-                            color: "#374151",
-                            font: {
-                                size: 18,
-                                weight: "bold",
-                            },
+                            font: { size: 14, weight: "bold" },
                         },
                     },
                 },
                 plugins: {
                     tooltip: {
                         enabled: true,
-                        backgroundColor: "#111827",
-                        titleColor: "#fff",
-                        bodyColor: "#f3f4f6",
-                        padding: 10,
-                        displayColors: false,
+                        backgroundColor: "rgba(17, 24, 39, 0.9)",
+                        padding: 12,
+                        cornerRadius: 8,
                     },
                     legend: {
+                        position: 'top',
                         labels: {
+                            padding: 20,
                             usePointStyle: true,
                         },
                     },
@@ -875,7 +874,7 @@ export async function initChartGabungan(): Promise<void> {
             plugins: [arrowPlugin],
         });
     } catch (error) {
-        // console.error("❌ Error initializing chart gabungan:", error);
+        // Tetap diam sesuai permintaanmu, tapi bagus untuk debug di lokal
     }
 }
 
