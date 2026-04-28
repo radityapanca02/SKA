@@ -170,16 +170,16 @@
 
         <!-- Profil Lengkap -->
         <section class="mx-auto py-16 px-4">
-            <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Profil Lengkap SKARIGA</h2>
+            <h2 class="text-5xl font-bold text-center mb-12">Profil Lengkap SKARIGA</h2>
 
             <div
-                class="relative w-full aspect-video mx-auto rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl bg-black">
+                class="relative w-full h-0 pb-[56.25%] mx-auto rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-black">
                 <iframe
                     src="{{ $profil->youtubeSrc }}?si=JYpD_LbCAMgLP_zM&vq=hd480&modestbranding=1&rel=0&playsinline=1"
                     title="PROFIL SMK PGRI 3 MALANG" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                    class="absolute inset-0 w-full h-full">
+                    class="absolute top-0 left-0 w-full h-full rounded-2xl">
                 </iframe>
             </div>
         </section>
