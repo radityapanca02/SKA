@@ -17,7 +17,7 @@
                         class="btn-pend bg-gray-600 text-white px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-green-700 transition shadow-lg text-center">CHAT
                         ADMIN</a>
                     <button data-target="dafOn"
-                        class="btn-pend bg-gray-500 text-white px-5 sm:px-6 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-orange-600 transition shadow-lg">DAFTAR
+                        class="btn-pend bg-gray-500 text-white px-5 sm:px-6 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-customOrange transition shadow-lg">DAFTAR
                         ONLINE</button>
                     <button data-target="dafOff"
                         class="btn-pend bg-gray-500 text-white px-5 sm:px-6 py-3 rounded-full text-base sm:text-lg font-semibold hover:bg-blue-600 transition shadow-lg">DAFTAR
@@ -67,7 +67,7 @@
                                         <tr class="hover:bg-gray-50 transition">
                                             <td class="px-4 py-3 text-gray-800 font-medium "
                                                 style="background-color: #efefef">{{ $row->tahun }}</td>
-                                            <td class="px-4 py-3 text-orange-600 text-center font-semibold">
+                                            <td class="px-4 py-3 text-customOrange text-center font-semibold">
                                                 {{ $row->jumlah_pendaftar }}</td>
                                             <td class="px-4 py-3 text-blue-600 font-semibold text-center">
                                                 {{ $row->jumlah_diterima }}</td>
@@ -135,7 +135,7 @@
                         <!-- Card 1 -->
                         <div
                             class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                            <div class="w-16 h-16 bg-customOrange rounded-2xl flex items-center justify-center mb-6">
                                 <i class="fas fa-certificate text-white text-2xl"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mb-4">Bonus Spesial</h3>
@@ -218,7 +218,7 @@
                         <!-- Card 5 -->
                         <div
                             class="w-full md:w-[45%] lg:w-[30%] bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-                            <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                            <div class="w-16 h-16 bg-customOrange rounded-2xl flex items-center justify-center mb-6">
                                 <i class="fas fa-ticket text-white text-2xl"></i>
                             </div>
                             <h3 class="text-2xl font-bold text-gray-800 mb-4">Sertifikasi Kompetensi</h3>

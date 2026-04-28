@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4 class="text-xl font-bold text-gray-900">${data.jurusan_utama.name}</h4>
                                 <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mt-2">${data.jurusan_utama.department}</span>
                                 <p class="text-gray-700 mt-3">${data.jurusan_utama.description}</p>
-                                <button type="button" class="redirect-btn bg-orange-500 text-white font-medium px-4 py-2 mt-4 rounded-xl shadow-md hover:bg-orange-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" data-major="${data.jurusan_utama.name}">Lihat Selengkapnya →</button>
+                                <button type="button" class="redirect-btn bg-customOrange text-white font-medium px-4 py-2 mt-4 rounded-xl shadow-md hover:bg-customOrange hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" data-major="${data.jurusan_utama.name}">Lihat Selengkapnya →</button>
                             </div>
                         </div>
                         <div>
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4 class="text-xl font-bold text-gray-900">${data.jurusan_alternatif.name}</h4>
                                 <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm mt-2">${data.jurusan_alternatif.department}</span>
                                 <p class="text-gray-700 mt-3">${data.jurusan_alternatif.description}</p>
-                                <button type="button" class="redirect-btn bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold px-5 py-2 mt-4 rounded-xl shadow-md hover:from-orange-600 hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-major="${data.jurusan_alternatif.name}">Lihat Selengkapnya →</button>
+                                <button type="button" class="redirect-btn bg-gradient-to-r from-customOrange to-red-500 text-white font-semibold px-5 py-2 mt-4 rounded-xl shadow-md hover:from-customOrange hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-major="${data.jurusan_alternatif.name}">Lihat Selengkapnya →</button>
                             </div>
                         </div>
                     `;

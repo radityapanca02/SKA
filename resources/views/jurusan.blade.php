@@ -70,11 +70,11 @@
                     <!-- Button Navigation -->
                     <div class="mt-10 flex flex-wrap justify-center gap-4">
                         <button data-target="elektro"
-                            class="btn-dept elektro-btn bg-orange-500 hover:bg-orange-500 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform">
+                            class="btn-dept elektro-btn bg-customOrange hover:bg-customOrange text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform">
                             ELEKTRO
                         </button>
                         <button data-target="otomotif"
-                            class="btn-dept otomotif-btn bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
+                            class="btn-dept otomotif-btn bg-customOrange hover:bg-customOrange text-white px-6 py-2 rounded-full shadow-md hover:scale-105 transition-transform"
                             style="background-color: rgb(239, 68, 68);">
                             OTOMOTIF
                         </button>

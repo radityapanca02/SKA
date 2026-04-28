@@ -4,7 +4,7 @@
 $colorClasses = [
 'BLUE' => 'bg-blue-500',
 'GREEN' => 'bg-green-500',
-'ORANGE' => 'bg-orange-500',
+'ORANGE' => 'bg-customOrange',
 'RED' => 'bg-red-500'
 ];
 

@@ -43,7 +43,7 @@
         <div class="bg-white p-4 rounded-lg shadow">
             <div class="flex items-center">
                 <div class="p-2 bg-orange-100 rounded-lg">
-                    <i class="fas fa-filter text-orange-600"></i>
+                    <i class="fas fa-filter text-customOrange"></i>
                 </div>
                 <div class="ml-4">
                     <p class="text-sm text-gray-500">Filtered</p>

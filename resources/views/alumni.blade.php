@@ -21,7 +21,7 @@
                     <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
                             class="fa-solid fa-backward-step"></i></button>
                     <button
-                        class="p-3 md:p-4 rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 transition"><i
+                        class="p-3 md:p-4 rounded-full bg-customOrange text-white shadow-lg hover:bg-customOrange transition"><i
                             class="fa-solid fa-pause"></i></button>
                     <button class="p-2 md:p-3 text-white rounded-full hover:bg-white/20 transition"><i
                             class="fa-solid fa-forward-step"></i></button>

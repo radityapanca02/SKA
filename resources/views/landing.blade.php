@@ -51,20 +51,20 @@
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="text-center md:text-left">
                     <div class="mb-6">
-                        <h1 class="text-6xl md:text-4xl lg:text-6xl font-bebas mb-4 leading-tight text-orange-500">SUCCESS BY<br><span class="text-white">DISCIPLINE</span></h1>
+                        <h1 class="text-6xl md:text-4xl lg:text-6xl font-bebas mb-4 leading-tight text-customOrange">SUCCESS BY<br><span class="text-white">DISCIPLINE</span></h1>
                         <p class="text-xl md:text-2xl text-blue-100 mb-6">Membentuk siswa cerdas, terampil, dan berkarakter</p>
                     </div>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="/profile" class="flex justify-center md:block">
-                            <button class="border-2 border-white text-white hover:bg-orange-600 hover:text-white hover:scale-105 hover:shadow-lg px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center">Profile</button>
+                        <a href="/profil" class="flex justify-center md:block">
+                            <button class="border-2 border-white text-white hover:bg-customOrange hover:text-white hover:scale-105 hover:shadow-lg px-8 py-3 rounded-lg font-semibold transition-all flex items-center justify-center">Profil Sekolah</button>
                         </a>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-orange-500 mb-2">1000+</div><div class="text-white">Siswa Aktif</div></div>
-                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-orange-500 mb-2">50+</div><div class="text-white">Guru Berpengalaman</div></div>
-                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-orange-500 mb-2">16</div><div class="text-white">Program Jurusan</div></div>
-                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-orange-500 mb-2">100+</div><div class="text-white">Kerjaan Sama Industri</div></div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-customOrange mb-2">1000+</div><div class="text-white">Siswa Aktif</div></div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-customOrange mb-2">50+</div><div class="text-white">Guru Berpengalaman</div></div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-customOrange mb-2">16</div><div class="text-white">Program Jurusan</div></div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-xl p-6 text-center border border-white border-opacity-20 hover:scale-105 hover:shadow-xl"><div class="text-3xl md:text-4xl font-bold text-customOrange mb-2">100+</div><div class="text-white">Kerjaan Sama Industri</div></div>
                 </div>
             </div>
         </div>
@@ -81,10 +81,10 @@
             <div class="w-full lg:w-2/5 flex flex-col justify-center">
                 <div id="leftContent">
                     <h2 class="text-5xl md:text-6xl font-bebas text-gray-900 mb-4">TEMUKAN JURUSAN</h2>
-                    <div class="text-4xl md:text-5xl font-bebas text-orange-400 mb-6">YANG COCOK UNTUKMU</div>
+                    <div class="text-4xl md:text-5xl font-bebas text-customOrange mb-6">YANG COCOK UNTUKMU</div>
                     <p class="text-lg text-gray-700 mb-6">Masih bingung memilih jurusan? Ceritakan apa yang kamu ketahui, bakat, atau passion-mu, dan kami akan rekomendasikan jurusan yang paling sesuai!</p>
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
-                        <h4 class="font-semibold text-blue-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-2 text-orange-500"></i>Contoh yang bisa kamu tulis:</h4>
+                        <h4 class="font-semibold text-blue-800 mb-2 flex items-center"><i class="fas fa-lightbulb mr-2 text-customOrange"></i>Contoh yang bisa kamu tulis:</h4>
                         <div class="text-sm text-blue-700 space-y-1">
                             <div>• "Saya suka coding dan buat aplikasi"</div>
                             <div>• "Suka otak-atik mesin dan elektronik"</div>
@@ -96,21 +96,21 @@
                 </div>
                 <div id="resultContainer" class="hidden bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-2xl shadow-lg border border-orange-200">
                     <h2 class="text-3xl font-bold text-gray-900 mb-2">REKOMENDASI JURUSAN</h2>
-                    <div class="w-20 h-1 bg-orange-500 mb-6"></div>
+                    <div class="w-20 h-1 bg-customOrange mb-6"></div>
                     <div id="resultContent" class="space-y-6"></div>
                 </div>
             </div>
             <div class="w-full lg:w-3/5 flex flex-col items-center">
                 <form id="recommendationForm" class="w-full max-w-md bg-white rounded-2xl shadow-xl hover:shadow-2xl p-8 mb-8 border border-gray-100">
                     <div class="text-center mb-2">
-                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-graduation-cap text-orange-500 text-2xl"></i></div>
-                        <h3 class="text-3xl font-bebas text-gray-800 mb-2">APA YANG KAMU <span class="text-4xl text-orange-500">SUKA?</span></h3>
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-graduation-cap text-customOrange text-2xl"></i></div>
+                        <h3 class="text-3xl font-bebas text-gray-800 mb-2">APA YANG KAMU <span class="text-4xl text-customOrange">SUKA?</span></h3>
                         <p class="text-gray-600 text-sm mb-6">Tuliskan apa yang kamu sukai, pelajaran favorit, atau cita-citamu</p>
                     </div>
                     <div class="mb-6 relative">
-                        <textarea id="keywordInput" name="keyword" placeholder="Bingung? coba tuliskan apa yang kamu ketahui disini" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none h-32" rows="4" required></textarea>
+                        <textarea id="keywordInput" name="keyword" placeholder="Bingung? coba tuliskan apa yang kamu ketahui disini" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-customOrange focus:border-transparent resize-none h-32" rows="4" required></textarea>
                     </div>
-                    <button type="submit" id="submitButton" class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-xl font-semibold text-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <button type="submit" id="submitButton" class="w-full bg-gradient-to-r from-customOrange to-customOrange text-white px-6 py-2 rounded-xl font-semibold text-lg hover:from-customOrange hover:to-customOrange transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         <i class="fas fa-search mr-3"></i>DAPATKAN REKOMENDASI
                     </button>
                 </form>
@@ -136,7 +136,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-blue-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-blue-500"><div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-book-open text-blue-600 text-2xl"></i></div><h3 class="text-xl font-semibold text-gray-800 mb-2">Kurikulum Modern</h3><p class="text-gray-600">Kurikulum terupdate yang sesuai dengan kebutuhan industri masa kini.</p></div>
-                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-orange-500"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-laptop-code text-orange-600 text-2xl"></i></div><h3 class="text-xl font-semibold text-gray-800 mb-2">Fasilitas Lengkap</h3><p class="text-gray-600">Laboratorium dan peralatan modern untuk mendukung pembelajaran praktis.</p></div>
+                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-customOrange"><div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-laptop-code text-customOrange text-2xl"></i></div><h3 class="text-xl font-semibold text-gray-800 mb-2">Fasilitas Lengkap</h3><p class="text-gray-600">Laboratorium dan peralatan modern untuk mendukung pembelajaran praktis.</p></div>
                 <div class="bg-blue-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-blue-500"><div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-user-graduate text-blue-600 text-2xl"></i></div><h3 class="text-xl font-semibold text-gray-800 mb-2">Bimbingan Karir</h3><p class="text-gray-600">Program bimbingan karir untuk mempersiapkan siswa memasuki dunia kerja.</p></div>
             </div>
         </div>
@@ -145,14 +145,14 @@
     <div class="bg-transparent py-16">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-5xl font-bebas text-gray-800 mb-4">PEMBELAJARAN <span class="text-orange-500">PRAKTIS</span></h2>
+                <h2 class="text-3xl md:text-5xl font-bebas text-gray-800 mb-4">PEMBELAJARAN <span class="text-customOrange">PRAKTIS</span></h2>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">Metode pembelajaran yang mengutamakan praktek langsung dan pengalaman nyata.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="bg-blue-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-blue-500"><i class="fas fa-tools text-4xl text-blue-600 mb-4"></i><h3 class="text-lg font-semibold mb-2">Workshop</h3><p class="text-gray-600">Sesi praktik langsung dengan alat dan materi nyata.</p></div>
-                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-orange-500"><i class="fas fa-industry text-4xl text-orange-600 mb-4"></i><h3 class="text-lg font-semibold mb-2">Industry Visit</h3><p class="text-gray-600">Kunjungan langsung ke industri untuk belajar praktik terbaik.</p></div>
+                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-customOrange"><i class="fas fa-industry text-4xl text-customOrange mb-4"></i><h3 class="text-lg font-semibold mb-2">Industry Visit</h3><p class="text-gray-600">Kunjungan langsung ke industri untuk belajar praktik terbaik.</p></div>
                 <div class="bg-blue-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-blue-500"><i class="fas fa-handshake text-4xl text-blue-600 mb-4"></i><h3 class="text-lg font-semibold mb-2">Magang</h3><p class="text-gray-600">Program magang untuk pengalaman kerja langsung.</p></div>
-                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-orange-500"><i class="fas fa-project-diagram text-4xl text-orange-600 mb-4"></i><h3 class="text-lg font-semibold mb-2">Project Based</h3><p class="text-gray-600">Pembelajaran melalui proyek nyata yang menantang.</p></div>
+                <div class="bg-orange-50 rounded-2xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-l-8 border-customOrange"><i class="fas fa-project-diagram text-4xl text-customOrange mb-4"></i><h3 class="text-lg font-semibold mb-2">Project Based</h3><p class="text-gray-600">Pembelajaran melalui proyek nyata yang menantang.</p></div>
             </div>
         </div>
     </div>
@@ -161,7 +161,7 @@
 <section class="w-full py-16 bg-white relative overflow-hidden">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-4xl md:text-5xl font-bebas text-gray-900 mb-2"><span class="text-black">4 Departemen Unggulan</span> <span class="text-orange-500">SKARIGA</span></h2>
+            <h2 class="text-4xl md:text-5xl font-bebas text-gray-900 mb-2"><span class="text-black">4 Departemen Unggulan</span> <span class="text-customOrange">SKARIGA</span></h2>
         </div>
         <div class="relative w-full max-w-4xl mx-auto">
             <div class="overflow-visible h-96 md:h-80">
@@ -174,7 +174,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">TIK</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknologi Informasi & Komunikasi</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Departemen TIK membekali siswa dengan keterampilan di bidang teknologi informasi, meliputi pemrograman, desain web, jaringan komputer, dan manajemen data.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-orange-500 text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-orange-600 transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Pemesinan</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Pemesinan</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Membekali siswa menguasai teknik mesin konvensional dan CNC, membaca gambar teknik, serta proses manufaktur industri.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-orange-500 text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-orange-600 transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Kelistrikan</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Kelistrikan</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Mengajarkan keterampilan instalasi, perawatan, dan sistem kontrol listrik untuk bangunan dan industri.</p>
                                 </div>
-                                <a href="/program/jurangan" class="redirect-department self-start bg-orange-500 text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-orange-600 transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/program/jurangan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -210,14 +210,14 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Otomotif</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Otomotif</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Fokus pada teknologi kendaraan bermotor, perawatan, dan sistem permesinan modern yang memenuhi kebutuhan industri.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-orange-500 text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-orange-600 transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center mt-8 md:mt-12 space-x-2">
-                <button class="dot w-6 h-3 rounded-full bg-orange-500" data-index="0"></button>
+                <button class="dot w-6 h-3 rounded-full bg-customOrange" data-index="0"></button>
                 <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
                 <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
                 <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
@@ -229,7 +229,7 @@
 
 <section class="w-full bg-white py-16">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bebas text-gray-900 text-center mb-12">KERJASAMA <span class="text-orange-500">INDUSTRI</span></h2>
+        <h2 class="text-3xl md:text-5xl font-bebas text-gray-900 text-center mb-12">KERJASAMA <span class="text-customOrange">INDUSTRI</span></h2>
         <div class="swiper industriSwiper2 mb-10">
             <div class="swiper-wrapper flex items-center">
                 <div class="swiper-slide-industri flex justify-center items-center"><img src="{{ $assetBase }}/assets/jatim.png" class="h-16 object-contain" alt="LG"></div>
@@ -284,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     resultContent.innerHTML = '<div class="p-6 bg-red-50 border border-red-200 rounded-lg mb-4"><h3 class="text-xl font-semibold text-red-800 mb-2">' + data.jurusan_utama.name + '</h3><p class="text-red-700">' + data.jurusan_utama.description + '</p></div>';
                 } else if (data.jurusan_utama && data.jurusan_alternatif) {
                     localStorage.setItem('recommendedMajors', JSON.stringify({ utama: data.jurusan_utama, alternatif: data.jurusan_alternatif, timestamp: Date.now(), expiresIn: 30000 }));
-                    resultContent.innerHTML = '<div class="mb-6"><h3 class="text-lg font-semibold text-blue-800 mb-2">Jurusan Utama:</h3><div class="p-4 bg-blue-50 border border-blue-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_utama.name + '</h4><span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mt-2">' + data.jurusan_utama.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_utama.description + '</p><button type="button" class="redirect-btn bg-orange-500 text-white font-medium px-4 py-2 mt-4 rounded-xl shadow-md hover:bg-orange-600 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_utama.name + '">Lihat Selengkapnya →</button></div></div><div><h3 class="text-lg font-semibold text-green-800 mb-2">Jurusan Alternatif:</h3><div class="p-4 bg-green-50 border border-green-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_alternatif.name + '</h4><span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm mt-2">' + data.jurusan_alternatif.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_alternatif.description + '</p><button type="button" class="redirect-btn bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold px-5 py-2 mt-4 rounded-xl shadow-md hover:from-orange-600 hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_alternatif.name + '">Lihat Selengkapnya →</button></div></div>';
+                    resultContent.innerHTML = '<div class="mb-6"><h3 class="text-lg font-semibold text-blue-800 mb-2">Jurusan Utama:</h3><div class="p-4 bg-blue-50 border border-blue-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_utama.name + '</h4><span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mt-2">' + data.jurusan_utama.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_utama.description + '</p><button type="button" class="redirect-btn bg-customOrange text-white font-medium px-4 py-2 mt-4 rounded-xl shadow-md hover:bg-customOrange hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_utama.name + '">Lihat Selengkapnya →</button></div></div><div><h3 class="text-lg font-semibold text-green-800 mb-2">Jurusan Alternatif:</h3><div class="p-4 bg-green-50 border border-green-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_alternatif.name + '</h4><span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm mt-2">' + data.jurusan_alternatif.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_alternatif.description + '</p><button type="button" class="redirect-btn bg-gradient-to-r from-customOrange to-red-500 text-white font-semibold px-5 py-2 mt-4 rounded-xl shadow-md hover:from-customOrange hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_alternatif.name + '">Lihat Selengkapnya →</button></div></div>';
                     setTimeout(() => { document.querySelectorAll('.redirect-btn').forEach(button => { button.addEventListener('click', function() { localStorage.setItem('selectedMajor', this.getAttribute('data-major')); window.location.href = '/program/jurusan'; }); }); }, 100);
                 } else { resultContent.innerHTML = '<div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg"><h3 class="text-lg font-semibold text-yellow-800">Format Response Tidak Dikenal</h3><p class="text-yellow-700 mt-2">Silakan coba lagi dengan kata kunci yang berbeda.</p></div>'; }
                 leftContent.classList.add('hidden'); resultContainer.classList.remove('hidden'); form.classList.add('hidden'); resetContainer.classList.remove('hidden');
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 else if (position === 3) card.classList.add('card-more-behind');
             }
         });
-        dots.forEach((dot, i) => { if (i === currentIndex) { dot.classList.remove('w-3', 'bg-gray-300'); dot.classList.add('w-6', 'bg-orange-500'); } else { dot.classList.remove('w-6', 'bg-orange-500'); dot.classList.add('w-3', 'bg-gray-300'); } });
+        dots.forEach((dot, i) => { if (i === currentIndex) { dot.classList.remove('w-3', 'bg-gray-300'); dot.classList.add('w-6', 'bg-customOrange'); } else { dot.classList.remove('w-6', 'bg-customOrange'); dot.classList.add('w-3', 'bg-gray-300'); } });
     }
 
     function navigateTo(index) { if (index < 0) index = cards.length - 1; if (index >= cards.length) index = 0; currentIndex = index; initializeCarousel(); }

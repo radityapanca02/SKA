@@ -3,7 +3,7 @@
 @switch($whois)
     @case('USER')
         <div class="flex items-start justify-end space-x-3 max-w-full ml-auto">
-            <div class="bg-orange-500 text-white px-4 py-2 rounded-lg select-none hover:scale-105 transition-transform">
+            <div class="bg-customOrange text-white px-4 py-2 rounded-lg select-none hover:scale-105 transition-transform">
                 {{ $slot }}
             </div>
             <div

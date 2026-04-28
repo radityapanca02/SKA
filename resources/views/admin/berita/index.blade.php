@@ -13,10 +13,10 @@
             </div>
         </div>
 
-        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-orange-500">
+        <div class="bg-white p-4 rounded-lg shadow border-l-4 border-customOrange">
             <div class="flex items-center">
                 <div class="p-2 bg-orange-100 rounded-lg">
-                    <i class="fas fa-newspaper text-orange-600"></i>
+                    <i class="fas fa-newspaper text-customOrange"></i>
                 </div>
                 <div class="ml-4">
                     <p class="text-sm text-gray-500">Halaman Ini</p>

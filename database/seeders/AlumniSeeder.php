@@ -15,7 +15,7 @@ class AlumniSeeder extends Seeder
 
         $faker = Factory::create('id_ID');
         $companies = ['Gojek', 'Tokopedia', 'Traveloka', 'PT Pembangkitan Jawa-Bali', 'Pertamina', 'Telkom Indonesia', 'Bank Mandiri', 'Google Indonesia', 'Shopee'];
-        $colors = ['bg-blue-500', 'bg-red-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500', 'bg-orange-500'];
+        $colors = ['bg-blue-500', 'bg-red-500', 'bg-green-500', 'bg-yellow-500', 'bg-purple-500', 'bg-customOrange'];
 
         $jumlahAlumni = 10;
 

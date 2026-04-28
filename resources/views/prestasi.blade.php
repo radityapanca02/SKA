@@ -124,7 +124,7 @@
                     <div class="text-gray-600 text-sm sm:text-base">Siswa Berprestasi</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
-                    <div class="text-2xl sm:text-3xl font-bold text-orange-600 mb-1 sm:mb-2">10+</div>
+                    <div class="text-2xl sm:text-3xl font-bold text-customOrange mb-1 sm:mb-2">10+</div>
                     <div class="text-gray-600 text-sm sm:text-base">Bidang Lomba</div>
                 </div>
                 <div class="bg-gray-300/50 rounded-xl p-4 sm:p-6 text-center shadow-md">
