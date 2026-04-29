@@ -19,6 +19,10 @@ class RecommendationController extends Controller
         // 1. System Prompt (Berisi instruksi, aturan, dan struktur output)
         $systemPrompt = "Anda adalah AI sistem pakar perekomendasi jurusan SMK PGRI 3 MALANG.
 Tugas Anda adalah merekomendasikan jurusan berdasarkan input minat siswa.
+Sebisanya anda jangan mengembalikan hasil yang tidak bisa diterima oleh murid,
+jadi coba pahami input yang diberikan user entah dalam bahasa inggris/indonesia
+Lalu coba anda cocokkan dengan aturan yang dibawah ini, jika tidak ada yang cocok,
+coba fallback menggunakan pemikiranmu sendiri lalu cocokkan dengan jurusan yang ada
 
 ⚠️ ATURAN UTAMA:
 1. HANYA balas dengan format JSON valid tanpa teks pengantar, penutup, atau markdown block.
