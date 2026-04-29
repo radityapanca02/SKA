@@ -174,7 +174,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">TIK</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknologi Informasi & Komunikasi</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Departemen TIK membekali siswa dengan keterampilan di bidang teknologi informasi, meliputi pemrograman, desain web, jaringan komputer, dan manajemen data.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Pemesinan</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Pemesinan</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Membekali siswa menguasai teknik mesin konvensional dan CNC, membaca gambar teknik, serta proses manufaktur industri.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Kelistrikan</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Kelistrikan</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Mengajarkan keterampilan instalasi, perawatan, dan sistem kontrol listrik untuk bangunan dan industri.</p>
                                 </div>
-                                <a href="/program/jurangan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                                     <div class="flex items-center justify-between mb-3 md:mb-4"><h3 class="text-xl md:text-2xl font-bold text-gray-900">Otomotif</h3><span class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik Otomotif</span></div>
                                     <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">Fokus pada teknologi kendaraan bermotor, perawatan, dan sistem permesinan modern yang memenuhi kebutuhan industri.</p>
                                 </div>
-                                <a href="/program/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
+                                <a href="/jurusan" class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya →</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +254,7 @@
 </section>
 
 <script>
-function redirect() { window.location.href = "/program/jurusan"; }
+function redirect() { window.location.href = "/jurusan"; }
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('recommendationForm');
     const keywordInput = document.getElementById('keywordInput');
@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else if (data.jurusan_utama && data.jurusan_alternatif) {
                     localStorage.setItem('recommendedMajors', JSON.stringify({ utama: data.jurusan_utama, alternatif: data.jurusan_alternatif, timestamp: Date.now(), expiresIn: 30000 }));
                     resultContent.innerHTML = '<div class="mb-6"><h3 class="text-lg font-semibold text-blue-800 mb-2">Jurusan Utama:</h3><div class="p-4 bg-blue-50 border border-blue-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_utama.name + '</h4><span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm mt-2">' + data.jurusan_utama.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_utama.description + '</p><button type="button" class="redirect-btn bg-customOrange text-white font-medium px-4 py-2 mt-4 rounded-xl shadow-md hover:bg-customOrange hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_utama.name + '">Lihat Selengkapnya →</button></div></div><div><h3 class="text-lg font-semibold text-green-800 mb-2">Jurusan Alternatif:</h3><div class="p-4 bg-green-50 border border-green-200 rounded-lg"><h4 class="text-xl font-bold text-gray-900">' + data.jurusan_alternatif.name + '</h4><span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm mt-2">' + data.jurusan_alternatif.department + '</span><p class="text-gray-700 mt-3">' + data.jurusan_alternatif.description + '</p><button type="button" class="redirect-btn bg-customOrange text-white font-semibold px-5 py-2 mt-4 rounded-xl shadow-md hover:from-customOrange hover:to-red-600 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1" data-major="' + data.jurusan_alternatif.name + '">Lihat Selengkapnya →</button></div></div>';
-                    setTimeout(() => { document.querySelectorAll('.redirect-btn').forEach(button => { button.addEventListener('click', function() { localStorage.setItem('selectedMajor', this.getAttribute('data-major')); window.location.href = '/program/jurusan'; }); }); }, 100);
+                    setTimeout(() => { document.querySelectorAll('.redirect-btn').forEach(button => { button.addEventListener('click', function() { localStorage.setItem('selectedMajor', this.getAttribute('data-major')); window.location.href = '/jurusan'; }); }); }, 100);
                 } else { resultContent.innerHTML = '<div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg"><h3 class="text-lg font-semibold text-yellow-800">Format Response Tidak Dikenal</h3><p class="text-yellow-700 mt-2">Silakan coba lagi dengan kata kunci yang berbeda.</p></div>'; }
                 leftContent.classList.add('hidden'); resultContainer.classList.remove('hidden'); form.classList.add('hidden'); resetContainer.classList.remove('hidden');
             } catch (error) { console.error('Error:', error); alert("Terjadi kesalahan: " + error.message); } finally { submitButton.disabled = false; submitButton.textContent = 'DAPATKAN REKOMENDASI'; }
