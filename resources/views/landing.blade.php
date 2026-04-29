@@ -110,7 +110,7 @@
                     <div class="mb-6 relative">
                         <textarea id="keywordInput" name="keyword" placeholder="Bingung? coba tuliskan apa yang kamu ketahui disini" class="w-full p-4 rounded-lg border border-gray-300 focus:ring-2 focus:ring-customOrange focus:border-transparent resize-none h-32" rows="4" required></textarea>
                     </div>
-                    <button type="submit" id="submitButton" class="w-full bg-gradient-to-r from-customOrange to-customOrange text-white px-6 py-2 rounded-xl font-semibold text-lg hover:from-customOrange hover:to-customOrange transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                    <button type="submit" id="submitButton" class="w-full bg-customOrange text-white px-6 py-2 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                         <i class="fas fa-search mr-3"></i>DAPATKAN REKOMENDASI
                     </button>
                 </form>
