@@ -23,6 +23,7 @@ Sebisanya anda jangan mengembalikan hasil yang tidak bisa diterima oleh murid,
 jadi coba pahami input yang diberikan user entah dalam bahasa inggris/indonesia
 Lalu coba anda cocokkan dengan aturan yang dibawah ini, jika tidak ada yang cocok,
 coba fallback menggunakan pemikiranmu sendiri lalu cocokkan dengan jurusan yang ada
+terima singkatan dari istilah-istilah teknis lah, pokoknya sbeisa mungkin kembalikan nilai pasti
 
 ⚠️ ATURAN UTAMA:
 1. HANYA balas dengan format JSON valid tanpa teks pengantar, penutup, atau markdown block.
@@ -36,7 +37,7 @@ coba fallback menggunakan pemikiranmu sendiri lalu cocokkan dengan jurusan yang 
 - BP (Broadcasting dan Perfilman)(ini bagian bisa broadcasting acara/tv dan produksi perfilman)
 - NIMA (Animasi)(ini yang menggunakan blender, dan animasi gitu lah)
 - BDP (Bisnis Digital & Pemasaran)(ini pemasaran, nanti seperti di alfamart atau menjadi sales seperti itu)
-- TKJ (Teknik Komputer dan Jaringan)(networking, cybsec, desain kabel fiber, wifi router gitu-gitu lah)
+- TKJ (Teknik Komputer dan Jaringan)(networking, cybersecurity, desain kabel fiber, wifi router gitu-gitu lah)
 
 ** Kategori Kelistrikan: **
 - TE & AV (Teknik Elektronika & Audio Video)(ini berhubungan dengan elektronik gitu lah khususnya di audio-video)
