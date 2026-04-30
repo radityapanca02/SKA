@@ -133,11 +133,28 @@ document.addEventListener('DOMContentLoaded', function () {
         dot.addEventListener('click', () => { if (index !== currentIndex) navigateTo(index); });
     });
 
-    cards.forEach(card => {
-        card.addEventListener('touchstart', function (e) { if (e.target.closest('a') || e.target.closest('button')) { return; } startX = e.touches[0].clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); }, { passive: true });
+    cards.forEach((card, index) => {
+        card.addEventListener('mousedown', function (e) {
+            if (e.target.closest('.redirect-btn')) return;
+            startX = e.clientX;
+            isDragging = true;
+            cards.forEach(c => c.style.transition = 'none');
+            document.body.style.cursor = 'grabbing';
+        });
+
+        card.addEventListener('touchstart', function (e) {
+            if (e.target.closest('.redirect-btn')) {
+                isDragging = false;
+                return;
+            }
+
+            startX = e.touches[0].clientX;
+            isDragging = true;
+            cards.forEach(c => c.style.transition = 'none');
+        }, { passive: true });
+
         card.addEventListener('touchmove', function (e) { if (!isDragging) { return; } if (animationFrameId) { cancelAnimationFrame(animationFrameId); } animationFrameId = requestAnimationFrame(() => { currentX = e.touches[0].clientX; updateDragPosition(); }); e.preventDefault(); }, { passive: false });
         card.addEventListener('touchend', function () { if (!isDragging) { return; } finishDrag(); });
-        card.addEventListener('mousedown', function (e) { startX = e.clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); document.body.style.cursor = 'grabbing'; e.preventDefault(); });
         card.addEventListener('mousemove', function (e) { if (!isDragging) { return; } if (animationFrameId) { cancelAnimationFrame(animationFrameId); } animationFrameId = requestAnimationFrame(() => { currentX = e.clientX; updateDragPosition(); }); });
         card.addEventListener('mouseup', function () { if (!isDragging) { return; } finishDrag(); });
         card.addEventListener('mouseleave', function () { if (!isDragging) { return; } finishDrag(); });

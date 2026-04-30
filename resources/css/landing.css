@@ -203,3 +203,18 @@
 .card[style*="pointer-events: none"] .redirect-department {
     pointer-events: none !important;
 }
+
+.card-active {
+    pointer-events: auto !important;
+    z-index: 50;
+}
+
+.card-behind, .card-far-behind {
+    pointer-events: none !important;
+}
+
+.redirect-btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    touch-action: manipulation;
+}
