@@ -326,22 +326,22 @@
                     </div>
                     <div class="flex justify-center mt-8 space-x-2">
                         <button class="dot w-6 h-3 rounded-full bg-customOrange" data-index="0"></button>
-                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
-                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
-                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-customOrange" data-index="1"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-customOrange" data-index="2"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-customOrange" data-index="3"></button>
                     </div>
                 </div>
 
                 <div
-                    class="hidden lg:flex relative w-full max-w-[1200px] mx-auto h-[550px] justify-center items-center mt-10">
+                    class="hidden lg:flex relative w-full max-w-300 mx-auto h-137.5 justify-center items-center mt-10">
 
                     <div
-                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-80 rotate-[-12deg] translate-y-4 z-0 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        class="absolute w-100 h-120 bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-80 rotate-[-12deg] translate-y-4 z-0 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
                         <div class="h-56 w-full overflow-hidden">
                             <img src="{{ $assetBase }}/assets/Depart1.png" alt="TIK"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                        <div class="p-6 flex flex-col grow justify-between bg-white">
                             <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">TIK</h3>
                                 <span
@@ -358,12 +358,12 @@
                     </div>
 
                     <div
-                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-28 rotate-[-4deg] z-10 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        class="absolute w-100 h-120 bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-28 rotate-[-4deg] z-10 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
                         <div class="h-56 w-full overflow-hidden">
                             <img src="{{ $assetBase }}/assets/Depart2.png" alt="Pemesinan"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                        <div class="p-6 flex flex-col grow justify-between bg-white">
                             <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Pemesinan</h3>
                                 <span
@@ -379,12 +379,12 @@
                     </div>
 
                     <div
-                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-28 rotate-[4deg] z-20 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        class="absolute w-100 h-120 bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-28 rotate-[4deg] z-20 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
                         <div class="h-56 w-full overflow-hidden">
                             <img src="{{ $assetBase }}/assets/Depart3.png" alt="Elektronika"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                        <div class="p-6 flex flex-col grow justify-between bg-white">
                             <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Elektronika</h3>
                                 <span
@@ -400,12 +400,12 @@
                     </div>
 
                     <div
-                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-80 rotate-[12deg] translate-y-4 z-30 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        class="absolute w-100 h-120 bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-80 rotate-[12deg] translate-y-4 z-30 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
                         <div class="h-56 w-full overflow-hidden">
                             <img src="{{ $assetBase }}/assets/Depart4.png" alt="Otomotif"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         </div>
-                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                        <div class="p-6 flex flex-col grow justify-between bg-white">
                             <div>
                                 <h3 class="text-2xl font-bold text-gray-900 mb-2">Otomotif</h3>
                                 <span

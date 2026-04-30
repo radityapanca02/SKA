@@ -1,4 +1,5 @@
 @props(['transparent' => false])
+@vite(['resources/css/app.css'])
 
 <!-- Wrapper sticky -->
 <div x-data="{ scrolled: false }" x-init="
