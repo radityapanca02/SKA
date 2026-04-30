@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
     return {
         plugins: [
             laravel({
-                input: ["resources/css/app.css", "resources/css/landing.css", "resources/ts/app.ts", "resources/js/admin-pagination.js"],
+                input: ["resources/css/app.css", "resources/css/landing.css", "resources/js/landing.js", "resources/ts/app.ts", "resources/js/admin-pagination.js"],
                 refresh: true,
             }),
         ],
