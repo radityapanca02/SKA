@@ -227,112 +227,199 @@
                 <h2 class="text-4xl md:text-5xl font-bebas text-gray-900 mb-2"><span class="text-black">4 Departemen
                         Unggulan</span> <span class="text-customOrange">SKARIGA</span></h2>
             </div>
-            <div class="relative w-full max-w-4xl mx-auto">
-                <div class="overflow-visible h-96 md:h-80">
-                    <div class="card-container relative h-full">
-                        <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 md:h-72 transition-all duration-700"
-                            data-index="0">
-                            <div class="flex flex-col md:flex-row h-full">
-                                <div class="md:w-2/5"><img src="{{ $assetBase }}/assets/Depart1.png" alt="TIK"
-                                        class="w-full h-40 md:h-full object-cover"></div>
-                                <div class="md:w-3/5 p-4 md:p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center justify-between mb-3 md:mb-4">
-                                            <h3 class="text-xl md:text-2xl font-bold text-gray-900">TIK</h3><span
-                                                class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknologi
-                                                Informasi & Komunikasi</span>
+            <div class="w-full">
+                <div class="block lg:hidden relative w-full max-w-4xl mx-auto mt-6">
+                    <div class="overflow-visible h-96">
+                        <div class="card-container relative h-full">
+                            <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 transition-all duration-700"
+                                data-index="0">
+                                <div class="flex flex-col h-full">
+                                    <div class="w-full"><img src="{{ $assetBase }}/assets/Depart1.png" alt="TIK"
+                                            class="w-full h-40 object-cover"></div>
+                                    <div class="w-full p-4 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h3 class="text-xl font-bold text-gray-900">TIK</h3>
+                                                <span
+                                                    class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Teknologi
+                                                    Informasi</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Departemen TIK membekali
+                                                siswa dengan keterampilan di bidang teknologi informasi, meliputi
+                                                pemrograman, desain web, jaringan komputer, dan manajemen data.</p>
                                         </div>
-                                        <p
-                                            class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">
-                                            Departemen TIK membekali siswa dengan keterampilan di bidang teknologi
-                                            informasi, meliputi pemrograman, desain web, jaringan komputer, dan
-                                            manajemen data.</p>
+                                        <a href="/jurusan"
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-orange-600 transition w-full text-center">Selengkapnya
+                                            →</a>
                                     </div>
-                                    <a href="/jurusan"
-                                        class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya
-                                        →</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 md:h-72 transition-all duration-700"
-                            data-index="1">
-                            <div class="flex flex-col md:flex-row h-full">
-                                <div class="md:w-2/5"><img src="{{ $assetBase }}/assets/Depart2.png" alt="Pemesinan"
-                                        class="w-full h-40 md:h-full object-cover"></div>
-                                <div class="md:w-3/5 p-4 md:p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center justify-between mb-3 md:mb-4">
-                                            <h3 class="text-xl md:text-2xl font-bold text-gray-900">Pemesinan</h3><span
-                                                class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik
-                                                Pemesinan</span>
+                            <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 transition-all duration-700"
+                                data-index="1">
+                                <div class="flex flex-col h-full">
+                                    <div class="w-full"><img src="{{ $assetBase }}/assets/Depart2.png" alt="Pemesinan"
+                                            class="w-full h-40 object-cover"></div>
+                                    <div class="w-full p-4 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h3 class="text-xl font-bold text-gray-900">Pemesinan</h3>
+                                                <span
+                                                    class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Teknik
+                                                    Pemesinan</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Membekali siswa menguasai
+                                                teknik mesin konvensional dan CNC, membaca gambar teknik, serta proses
+                                                manufaktur industri.</p>
                                         </div>
-                                        <p
-                                            class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">
-                                            Membekali siswa menguasai teknik mesin konvensional dan CNC, membaca gambar
-                                            teknik, serta proses manufaktur industri.</p>
+                                        <a href="/jurusan"
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-orange-600 transition w-full text-center">Selengkapnya
+                                            →</a>
                                     </div>
-                                    <a href="/jurusan"
-                                        class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya
-                                        →</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 md:h-72 transition-all duration-700"
-                            data-index="2">
-                            <div class="flex flex-col md:flex-row h-full">
-                                <div class="md:w-2/5"><img src="{{ $assetBase }}/assets/Depart3.png" alt="Elektronika"
-                                        class="w-full h-40 md:h-full object-cover"></div>
-                                <div class="md:w-3/5 p-4 md:p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center justify-between mb-3 md:mb-4">
-                                            <h3 class="text-xl md:text-2xl font-bold text-gray-900">Elektronika</h3>
-                                            <span
-                                                class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">
-                                                Elektronika</span>
+                            <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 transition-all duration-700"
+                                data-index="2">
+                                <div class="flex flex-col h-full">
+                                    <div class="w-full"><img src="{{ $assetBase }}/assets/Depart3.png" alt="Elektronika"
+                                            class="w-full h-40 object-cover"></div>
+                                    <div class="w-full p-4 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h3 class="text-xl font-bold text-gray-900">Elektronika</h3>
+                                                <span
+                                                    class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Elektronika</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Mengajarkan keterampilan
+                                                instalasi, perawatan, dan sistem kontrol listrik untuk bangunan dan
+                                                industri.</p>
                                         </div>
-                                        <p
-                                            class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">
-                                            Mengajarkan keterampilan instalasi, perawatan, dan sistem kontrol listrik
-                                            untuk bangunan dan industri.</p>
+                                        <a href="/jurusan"
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-orange-600 transition w-full text-center">Selengkapnya
+                                            →</a>
                                     </div>
-                                    <a href="/jurusan"
-                                        class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya
-                                        →</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 md:h-72 transition-all duration-700"
-                            data-index="3">
-                            <div class="flex flex-col md:flex-row h-full">
-                                <div class="md:w-2/5"><img src="{{ $assetBase }}/assets/Depart4.png" alt="Otomotif"
-                                        class="w-full h-40 md:h-full object-cover"></div>
-                                <div class="md:w-3/5 p-4 md:p-6 flex flex-col justify-between">
-                                    <div>
-                                        <div class="flex items-center justify-between mb-3 md:mb-4">
-                                            <h3 class="text-xl md:text-2xl font-bold text-gray-900">Otomotif</h3><span
-                                                class="px-2 md:px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-semibold">Teknik
-                                                Otomotif</span>
+                            <div class="card absolute inset-0 bg-white rounded-2xl shadow-lg overflow-hidden h-80 transition-all duration-700"
+                                data-index="3">
+                                <div class="flex flex-col h-full">
+                                    <div class="w-full"><img src="{{ $assetBase }}/assets/Depart4.png" alt="Otomotif"
+                                            class="w-full h-40 object-cover"></div>
+                                    <div class="w-full p-4 flex flex-col justify-between">
+                                        <div>
+                                            <div class="flex items-center justify-between mb-3">
+                                                <h3 class="text-xl font-bold text-gray-900">Otomotif</h3>
+                                                <span
+                                                    class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold">Teknik
+                                                    Otomotif</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-4 text-sm line-clamp-3">Fokus pada teknologi
+                                                kendaraan bermotor, perawatan, dan sistem permesinan modern yang
+                                                memenuhi kebutuhan industri.</p>
                                         </div>
-                                        <p
-                                            class="text-gray-600 mb-4 md:mb-6 text-sm md:text-base line-clamp-3 md:line-clamp-none">
-                                            Fokus pada teknologi kendaraan bermotor, perawatan, dan sistem permesinan
-                                            modern yang memenuhi kebutuhan industri.</p>
+                                        <a href="/jurusan"
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-orange-600 transition w-full text-center">Selengkapnya
+                                            →</a>
                                     </div>
-                                    <a href="/jurusan"
-                                        class="redirect-department self-start bg-customOrange text-white px-4 md:px-6 py-2 md:py-2 rounded-lg text-xs md:text-sm font-semibold hover:bg-customOrange transition w-full md:w-auto text-center">Selengkapnya
-                                        →</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <button class="dot w-6 h-3 rounded-full bg-customOrange" data-index="0"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+                        <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+                    </div>
                 </div>
-                <div class="flex justify-center mt-8 md:mt-12 space-x-2">
-                    <button class="dot w-6 h-3 rounded-full bg-customOrange" data-index="0"></button>
-                    <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
-                    <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
-                    <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
+
+                <div
+                    class="hidden lg:flex relative w-full max-w-[1200px] mx-auto h-[550px] justify-center items-center mt-10">
+
+                    <div
+                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-80 rotate-[-12deg] translate-y-4 z-0 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        <div class="h-56 w-full overflow-hidden">
+                            <img src="{{ $assetBase }}/assets/Depart1.png" alt="TIK"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">TIK</h3>
+                                <span
+                                    class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-3">Teknologi
+                                    Informasi & Komunikasi</span>
+                                <p class="text-gray-600 text-sm">Departemen TIK membekali siswa dengan keterampilan di
+                                    bidang teknologi informasi, meliputi pemrograman, desain web, jaringan komputer, dan
+                                    manajemen data.</p>
+                            </div>
+                            <a href="/jurusan"
+                                class="bg-customOrange text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-orange-600 transition w-full text-center mt-4">Selengkapnya
+                                →</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform -translate-x-28 rotate-[-4deg] z-10 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        <div class="h-56 w-full overflow-hidden">
+                            <img src="{{ $assetBase }}/assets/Depart2.png" alt="Pemesinan"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Pemesinan</h3>
+                                <span
+                                    class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-3">Teknik
+                                    Pemesinan</span>
+                                <p class="text-gray-600 text-sm">Membekali siswa menguasai teknik mesin konvensional dan
+                                    CNC, membaca gambar teknik, serta proses manufaktur industri.</p>
+                            </div>
+                            <a href="/jurusan"
+                                class="bg-customOrange text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-orange-600 transition w-full text-center mt-4">Selengkapnya
+                                →</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-28 rotate-[4deg] z-20 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        <div class="h-56 w-full overflow-hidden">
+                            <img src="{{ $assetBase }}/assets/Depart3.png" alt="Elektronika"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Elektronika</h3>
+                                <span
+                                    class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-3">Teknik
+                                    Elektronika</span>
+                                <p class="text-gray-600 text-sm">Mengajarkan keterampilan instalasi, perawatan, dan
+                                    sistem kontrol listrik untuk bangunan dan industri.</p>
+                            </div>
+                            <a href="/jurusan"
+                                class="bg-customOrange text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-orange-600 transition w-full text-center mt-4">Selengkapnya
+                                →</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="absolute w-[400px] h-[480px] bg-white rounded-2xl shadow-xl transition-all duration-500 transform translate-x-80 rotate-[12deg] translate-y-4 z-30 hover:z-40 hover:scale-105 hover:-translate-y-6 hover:rotate-0 overflow-hidden flex flex-col group">
+                        <div class="h-56 w-full overflow-hidden">
+                            <img src="{{ $assetBase }}/assets/Depart4.png" alt="Otomotif"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between bg-white">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Otomotif</h3>
+                                <span
+                                    class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold mb-3">Teknik
+                                    Otomotif</span>
+                                <p class="text-gray-600 text-sm">Fokus pada teknologi kendaraan bermotor, perawatan, dan
+                                    sistem permesinan modern yang memenuhi kebutuhan industri.</p>
+                            </div>
+                            <a href="/jurusan"
+                                class="bg-customOrange text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:bg-orange-600 transition w-full text-center mt-4">Selengkapnya
+                                →</a>
+                        </div>
+                    </div>
                 </div>
-                {{-- <div class="text-center mt-4 text-gray-500 text-sm">Geser atau klik untuk melihat departemen lainnya</div> --}}
             </div>
         </div>
     </section>
@@ -381,6 +468,7 @@
     <script>
         function redirect() { window.location.href = "/jurusan"; }
         document.addEventListener('DOMContentLoaded', function () {
+            // [KODE FORM REKOMENDASI TETAP SAMA]
             const form = document.getElementById('recommendationForm');
             const keywordInput = document.getElementById('keywordInput');
             const keywordDropdown = document.getElementById('keywordDropdown');
@@ -431,29 +519,53 @@
             let currentIndex = 0, isDragging = false, startX = 0, currentX = 0, dragThreshold = 80, animationFrameId = null;
 
             function initializeCarousel() {
-                const isMobile = window.innerWidth < 768;
+                const isMobile = window.innerWidth < 1024;
+
                 cards.forEach((card, index) => {
                     const cardIndex = parseInt(card.getAttribute('data-index'));
                     const position = (cardIndex - currentIndex + cards.length) % cards.length;
-                    card.removeAttribute('style');
-                    card.classList.remove('card-active', 'card-behind', 'card-far-behind', 'card-more-behind');
+
+                    card.style.transition = 'all 0.7s ease';
+
                     if (isMobile) {
-                        if (position === 0) { card.classList.add('card-active'); card.style.display = 'block'; }
-                        else { card.style.display = 'none'; }
+                        if (position === 0) {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateX(0) scale(1)';
+                            card.style.zIndex = '10';
+                            card.style.pointerEvents = 'auto';
+                        } else {
+                            let direction = (position === cards.length - 1) ? -100 : 100;
+                            card.style.opacity = '0';
+                            card.style.transform = `translateX(${direction}%) scale(0.9)`;
+                            card.style.zIndex = '0';
+                            card.style.pointerEvents = 'none';
+                        }
                     } else {
-                        card.style.display = 'block';
-                        if (position === 0) card.classList.add('card-active');
-                        else if (position === 1) card.classList.add('card-behind');
-                        else if (position === 2) card.classList.add('card-far-behind');
-                        else if (position === 3) card.classList.add('card-more-behind');
+                        card.removeAttribute('style');
                     }
                 });
-                dots.forEach((dot, i) => { if (i === currentIndex) { dot.classList.remove('w-3', 'bg-gray-300'); dot.classList.add('w-6', 'bg-customOrange'); } else { dot.classList.remove('w-6', 'bg-customOrange'); dot.classList.add('w-3', 'bg-gray-300'); } });
+
+                dots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.classList.remove('w-3', 'bg-gray-300');
+                        dot.classList.add('w-6', 'bg-customOrange');
+                    } else {
+                        dot.classList.remove('w-6', 'bg-customOrange');
+                        dot.classList.add('w-3', 'bg-gray-300');
+                    }
+                });
             }
 
-            function navigateTo(index) { if (index < 0) index = cards.length - 1; if (index >= cards.length) index = 0; currentIndex = index; initializeCarousel(); }
+            function navigateTo(index) {
+                if (index < 0) index = cards.length - 1;
+                if (index >= cards.length) index = 0;
+                currentIndex = index;
+                initializeCarousel();
+            }
 
-            dots.forEach((dot, index) => { dot.addEventListener('click', () => { if (index !== currentIndex) navigateTo(index); }); });
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => { if (index !== currentIndex) navigateTo(index); });
+            });
 
             cards.forEach(card => {
                 card.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); e.preventDefault(); }, { passive: false });
@@ -466,17 +578,20 @@
             });
 
             function updateDragPosition() {
-                const isMobile = window.innerWidth < 768;
+                const isMobile = window.innerWidth < 1024;
                 const diffX = currentX - startX;
                 const progress = Math.min(Math.abs(diffX) / 300, 1);
+
                 cards.forEach((card) => {
                     const cardIndex = parseInt(card.getAttribute('data-index'));
                     const position = (cardIndex - currentIndex + cards.length) % cards.length;
-                    if (isMobile && position !== 0) return;
-                    if (position === 0) { card.style.transform = 'translateX(' + diffX + 'px) scale(' + (isMobile ? 1 - progress * 0.05 : 1 - progress * 0.08) + ') rotateY(' + diffX * 0.1 + 'deg)'; card.style.opacity = isMobile ? 1 - progress * 0.2 : 1 - progress * 0.3; }
-                    else if (position === 1 && !isMobile) { card.style.transform = 'translateX(' + (80 + (diffX > 0 ? Math.min(diffX * 0.8, 80) : Math.max(diffX * 0.8, -30))) + 'px) scale(' + (0.92 - progress * 0.08) + ') rotateY(' + (diffX * 0.08 - 5) + 'deg)'; card.style.opacity = 0.85 - progress * 0.25; }
-                    else if (position === 2 && !isMobile) { card.style.transform = 'translateX(' + (160 + (diffX > 0 ? Math.min(diffX * 0.6, 60) : Math.max(diffX * 0.6, -20))) + 'px) scale(' + (0.84 - progress * 0.08) + ') rotateY(' + (diffX * 0.06 - 8) + 'deg)'; card.style.opacity = 0.7 - progress * 0.2; }
-                    else if (position === 3 && !isMobile) { card.style.transform = 'translateX(' + (240 + (diffX > 0 ? Math.min(diffX * 0.4, 40) : Math.max(diffX * 0.4, -10))) + 'px) scale(' + (0.76 - progress * 0.06) + ') rotateY(' + (diffX * 0.04 - 10) + 'deg)'; card.style.opacity = 0.5 - progress * 0.15; }
+
+                    if (isMobile) {
+                        if (position === 0) {
+                            card.style.transform = `translateX(${diffX}px) scale(${1 - progress * 0.05})`;
+                            card.style.opacity = 1 - progress * 0.3;
+                        }
+                    }
                 });
             }
 
@@ -485,8 +600,11 @@
                 document.body.style.cursor = '';
                 if (animationFrameId) cancelAnimationFrame(animationFrameId);
                 const diffX = currentX - startX;
-                if (Math.abs(diffX) > dragThreshold) { if (diffX > 0) navigateTo(currentIndex - 1); else navigateTo(currentIndex + 1); }
-                else { initializeCarousel(); }
+                if (Math.abs(diffX) > dragThreshold) {
+                    if (diffX > 0) navigateTo(currentIndex - 1); else navigateTo(currentIndex + 1);
+                } else {
+                    initializeCarousel();
+                }
             }
 
             setTimeout(() => { initializeCarousel(); }, 100);
@@ -507,8 +625,12 @@
             startAutoplay();
 
             const cardContainer = document.querySelector('.card-container');
-            cardContainer.addEventListener('mouseenter', stopAutoplay);
-            cardContainer.addEventListener('mouseleave', startAutoplay);
+            if (cardContainer) {
+                cardContainer.addEventListener('mouseenter', stopAutoplay);
+                cardContainer.addEventListener('mouseleave', startAutoplay);
+                cardContainer.addEventListener('touchstart', stopAutoplay, { passive: true });
+                cardContainer.addEventListener('touchend', startAutoplay, { passive: true });
+            }
         });
     </script>
 </x-layout>
