@@ -330,6 +330,9 @@
                         <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
                         <button class="dot w-3 h-3 rounded-full bg-gray-300" data-index="3"></button>
                     </div>
+                    <p class="text-center mt-4 text-gray-500 text-sm">
+                        Geser atau klik untuk melihat departemen lainnya
+                    </p>
                 </div>
 
                 <div
