@@ -197,6 +197,9 @@
 .redirect-department {
     position: relative !important;
     z-index: 50 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    touch-action: manipulation !important;
+}
+
+.card[style*="pointer-events: none"] .redirect-department {
+    pointer-events: none !important;
 }

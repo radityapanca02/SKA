@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     cards.forEach(card => {
-        card.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); e.preventDefault(); }, { passive: false });
+        card.addEventListener('touchstart', function (e) { if (e.target.closest('a') || e.target.closest('button')) { return; } startX = e.touches[0].clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); }, { passive: true });
         card.addEventListener('touchmove', function (e) { if (!isDragging) { return; } if (animationFrameId) { cancelAnimationFrame(animationFrameId); } animationFrameId = requestAnimationFrame(() => { currentX = e.touches[0].clientX; updateDragPosition(); }); e.preventDefault(); }, { passive: false });
         card.addEventListener('touchend', function () { if (!isDragging) { return; } finishDrag(); });
         card.addEventListener('mousedown', function (e) { startX = e.clientX; isDragging = true; cards.forEach(c => c.style.transition = 'none'); document.body.style.cursor = 'grabbing'; e.preventDefault(); });
