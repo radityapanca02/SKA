@@ -249,7 +249,7 @@
                                                 pemrograman, desain web, jaringan komputer, dan manajemen data.</p>
                                         </div>
                                         <a href="/jurusan"
-                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center">Selengkapnya
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center z-50">Selengkapnya
                                             →</a>
                                     </div>
                                 </div>
@@ -272,7 +272,7 @@
                                                 manufaktur industri.</p>
                                         </div>
                                         <a href="/jurusan"
-                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center">Selengkapnya
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center z-50">Selengkapnya
                                             →</a>
                                     </div>
                                 </div>
@@ -294,7 +294,7 @@
                                                 industri.</p>
                                         </div>
                                         <a href="/jurusan"
-                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center">Selengkapnya
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center z-50">Selengkapnya
                                             →</a>
                                     </div>
                                 </div>
@@ -317,7 +317,7 @@
                                                 memenuhi kebutuhan industri.</p>
                                         </div>
                                         <a href="/jurusan"
-                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center">Selengkapnya
+                                            class="redirect-department bg-customOrange text-white px-4 py-2 rounded-lg text-xs font-semibold hover:bg-customBlue transition w-full text-center z-50">Selengkapnya
                                             →</a>
                                     </div>
                                 </div>
