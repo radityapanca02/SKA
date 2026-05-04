@@ -45,8 +45,8 @@ async function handleFormSubmit(e) {
         form.classList.add('hidden');
         resetContainer.classList.remove('hidden');
     } catch (error) {
-        console.error('Error:', error);
-        alert("Terjadi kesalahan: " + error.message);
+        // console.error('Error:', error);
+        // alert("Terjadi kesalahan: " + error.message);
     } finally {
         submitButton.disabled = false;
         submitButton.textContent = 'DAPATKAN REKOMENDASI';

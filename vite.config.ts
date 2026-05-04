@@ -12,17 +12,16 @@ export default defineConfig(({ mode }) => {
             }),
         ],
         server: {
-            host: 'localhost',
-            port: 5173,
-            strictPort: true,
+            host: env.VITE_HOST || 'localhost',
+            port: Number.parseInt(env.VITE_PORT) || 5173,
             watch: {
                 usePolling: true,
                 interval: 500,
             },
             hmr: {
-                protocol: 'wss',
-                host: env.VITE_HOST,
-                clientPort: 443,
+                host: env.VITE_HOST || 'localhost',
+                protocol: 'ws',
+                port: Number.parseInt(env.VITE_PORT) || 5173,
             },
         },
         build: {
