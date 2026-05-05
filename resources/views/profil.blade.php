@@ -82,9 +82,9 @@
 
                     <div class="relative flex justify-center items-start w-full">
 
-                        <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-full max-h-[450px]
-                            top-[-10%] sm:-top-8 md:top-16 lg:top-0
-                            md:-translate-y-[30%] lg:-translate-y-[41.2%]">
+                        <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-full max-h-md
+                            -top-10 sm:-top-8 md:top-8 lg:top-11
+                            transform md:-translate-y-1/4 lg:-translate-y-1/2">
 
                             <img src="{{ !is_null($profil->visiImage) ? $assetBase . '/storage/' . $profil->visiImage : $assetBase . '/assets/bp.Luqman_kepsek-removebg-preview.png' }}"
                                 alt="Kepala Sekolah SMK PGRI 3 Malang"
@@ -130,10 +130,10 @@
             <h2 class="text-5xl font-bold text-center mb-12">Misi</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-4 gap-8">
                 @foreach ($profil->misis as $misi)
-                <x-profilcard bgColor="{{ $misi->misiColor }}" title="{!! $misi->misiTitle !!}"
-                    image="{{ !is_null($misi->misiImage) ? $assetBase . '/storage/' . $misi->misiImage : 'https://placehold.co/50x50' }}">
-                    {{ $misi->misiDesc }}
-                </x-profilcard>
+                    <x-profilcard bgColor="{{ $misi->misiColor }}" title="{!! $misi->misiTitle !!}"
+                        image="{{ !is_null($misi->misiImage) ? $assetBase . '/storage/' . $misi->misiImage : 'https://placehold.co/50x50' }}">
+                        {{ $misi->misiDesc }}
+                    </x-profilcard>
                 @endforeach
             </div>
 
