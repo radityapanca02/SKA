@@ -83,7 +83,7 @@
                     <div class="relative flex justify-center items-start w-full">
 
                         <div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-full max-h-md
-                            -top-10 sm:-top-8 md:top-8 lg:top-11
+                            -top-11 sm:-top-11 md:top-11 lg:top-11
                             transform md:-translate-y-1/4 lg:-translate-y-1/2">
 
                             <img src="{{ !is_null($profil->visiImage) ? $assetBase . '/storage/' . $profil->visiImage : $assetBase . '/assets/bp.Luqman_kepsek-removebg-preview.png' }}"
