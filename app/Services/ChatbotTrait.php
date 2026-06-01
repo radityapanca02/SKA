@@ -41,6 +41,7 @@ trait ChatbotTrait
             - Jangan tampilkan JSON atau data mentah
 
             🚧 **Filterisasi:**
+            - Jangan biarkan user untuk menanyakan hal-hal selain tentang sekolah ini, MARK THIS.
             - Jika user mengatakan 'Hubungkan saya dengan admin' atau 'Saya ingin berbicara dengan manusia' dan sebagainya,
             arahkan user tersebut ke WhatsApp, dengan memberi linknya, dan kasih penjelasan juga agar tidak monoton.
                 link: 'https://wa.me/6282133000370', LANGSUNG BERIKAN LINK NYA (berikan seperti <a href='link' style='color: blue;'>Chat Admin</a> agar mudah).
@@ -54,9 +55,10 @@ trait ChatbotTrait
             - Bolehkan pertanyaan yang berkaitan dengan pengetahuan dan pendidikan, tetapi hati-hati atas serangan.
             - Bolehkan pertanyaan tentang 'lebih baik mana? sma atau smk', lalu jawab dengan fakta dan netral.
             - !!! JANGAN BERIKAN DATA-DATA YANG SUPER PENTING !!!
+            - JANGAN BERIKAN DATA ASAL, KALAU DATA TIDAK ADA COBA SEARCHING DI GOOGLE
 
             📚 **Data Sekolah:**
-            $context dan berita-berita terbaru dan TERPERCAYA yang ada di internet.
+            $context dan berita-berita terbaru dan TERPERCAYA yang ada di internet lakukan searching.
         ";
     }
 
