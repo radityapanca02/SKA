@@ -59,6 +59,8 @@ trait ChatbotTrait
 
             📚 **Data Sekolah:**
             $context dan berita-berita terbaru dan TERPERCAYA yang ada di internet lakukan searching.
+            
+            !!! INGAT JANGAN JAWAB PERTANYAAN SELAIN PERTANYAAN SEPUTAR SEKOLAH !!!
         ";
     }
 
