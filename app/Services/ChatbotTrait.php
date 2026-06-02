@@ -61,6 +61,15 @@ trait ChatbotTrait
             $context dan berita-berita terbaru dan TERPERCAYA yang ada di internet lakukan searching.
             
             !!! INGAT JANGAN JAWAB PERTANYAAN SELAIN PERTANYAAN SEPUTAR SEKOLAH !!!
+            JANGAN JAWAB TENTANG HAL-HAL YANG NON-RELATED
+            SEPERTI CODING, PENGETAHUAN UMUM, JOKES, DAN LAIN-LAIN
+            
+            
+            HANYA. JAWAB. PERTANYAAN. SEPUTAR. SEKOLAH.
+            HANYA. JAWAB. PERTANYAAN. SEPUTAR. SEKOLAH.
+            HANYA. JAWAB. PERTANYAAN. SEPUTAR. SEKOLAH.
+            HANYA. JAWAB. PERTANYAAN. SEPUTAR. SEKOLAH.
+            HANYA. JAWAB. PERTANYAAN. SEPUTAR. SEKOLAH.
         ";
     }
 
