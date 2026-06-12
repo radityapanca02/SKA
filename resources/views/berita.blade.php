@@ -88,7 +88,7 @@
                 @if ($main)
                 <div class="berita-main-card scroll-reveal">
                     <div class="relative overflow-hidden">
-                        <img src="{{ !is_null($main->gambar) ? $assetBase . '/storage/' . $main->gambar : 'https://placehold.co/600x400' }}" alt="{{ $main->title }}" class="berita-main-image">
+                        <img src="{{ !is_null($main->gambar) ? $assetBase . '/storage/' . $main->gambar : 'https://placehold.co/600x400' }}" alt="{{ $main->title }}" class="berita-main-image aspect-square">
                         <div class="berita-badge">{{ $section['title'] }}</div>
                     </div>
                     <div class="berita-main-content">

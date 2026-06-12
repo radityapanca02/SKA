@@ -9,7 +9,7 @@
                         <!-- Gambar Utama -->
                         <div class="relative">
                             <img src="{{ !is_null($berita->gambar) ? $assetBase . '/storage/' . $berita->gambar : 'https://placehold.co/600x400' }}" alt="{{ $berita->title }}"
-                                class="w-full h-48 md:h-64 lg:h-80 xl:h-96 object-cover">
+                                class="w-full aspect-square object-cover">
                             <div class="absolute top-4 left-4">
                                 <span class="bg-customBlue text-white px-3 py-1 rounded-full text-xs font-medium">
                                     {{ $berita->type }}
