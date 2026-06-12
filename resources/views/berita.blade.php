@@ -1,139 +1,137 @@
 <x-layout title="Berita - SMK PGRI 3 Malang">
-@push('styles')
-<style>
-    .font-bebas { font-family: 'Bebas Neue', cursive; }
-    .font-poppins { font-family: 'Poppins', sans-serif; }
-    .berita-section { padding: 4rem 1rem; background: transparent; position: relative; }
-    .berita-title { font-size: 2.5rem; background: linear-gradient(135deg, #1f2937, #374151); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 3rem; position: relative; text-align: center; }
-    .berita-title::after { content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 100px; height: 3px; background: linear-gradient(90deg, #f97316, #fdba74); border-radius: 2px; }
-    .berita-container { width: 98%; max-width: none; margin: 0 auto; position: relative; }
-    .berita-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start; }
-    .berita-main-card { background: white; border-radius: 1.5rem; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); transition: all 0.4s ease; border: 1px solid #f3f4f6; height: fit-content; position: relative; }
-    .berita-main-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); border-color: #f97316; }
-    .berita-main-image { width: 100%; height: 280px; object-fit: cover; transition: transform 0.4s ease; }
-    .berita-main-card:hover .berita-main-image { transform: scale(1.05); }
-    .berita-main-content { padding: 1.5rem; }
-    .berita-main-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; line-height: 1.3; }
-    .berita-main-excerpt { color: #6b7280; line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem; display: block; overflow: visible; white-space: normal; }
-    .berita-side-container { display: flex; flex-direction: column; gap: 1rem; height: 100%; }
-    .berita-side-card { display: flex; height: 245px; background: #fff; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); border: 1px solid #f3f4f6; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .berita-side-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); border-color: #f97316; }
-    .berita-side-image { width: 50%; min-width: 200px; max-width: 200px; height: 100%; object-fit: cover; transition: transform 0.3s ease; flex-shrink: 0; }
-    .berita-side-card:hover .berita-side-image { transform: scale(1.05); }
-    .berita-side-content { flex: 1; padding: 0.9rem 1rem; display: flex; flex-direction: column; justify-content: space-between; min-height: 210px; }
-    .berita-date { display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; color: #6b7280; margin-bottom: 0.3rem; }
-    .berita-side-title { font-weight: 600; font-size: 1rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .berita-side-excerpt { color: #6b7280; line-height: 1.5; font-size: 0.875rem; margin-bottom: 0.5rem; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
-    .berita-read-more { font-size: 0.85rem; color: #f97316; font-weight: 600; text-decoration: none; align-self: flex-start; transition: color 0.3s ease; }
-    .berita-read-more:hover { text-decoration: underline; color: #ea580c; }
-    .berita-badge { position: absolute; top: 1rem; left: 1rem; background: linear-gradient(135deg, #f97316, #ea580c); color: white; padding: 0.4rem 0.8rem; border-radius: 1.5rem; font-size: 0.75rem; font-weight: 600; z-index: 3; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3); }
-    .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
-    .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
-    .berita-section~.berita-section { padding-top: 0; padding-bottom: 2rem; }
-    .berita-section~.berita-section .berita-title { margin-bottom: 2rem; }
-    .berita-section:first-child { padding-top: 4rem; padding-bottom: 4rem; }
-    .berita-section:first-child .berita-title { margin-bottom: 3rem; }
-    @media (max-width: 1024px) {
-        .berita-layout { grid-template-columns: 1fr; gap: 1.5rem; }
-        .berita-side-container { flex-direction: row; gap: 1rem; }
-        .berita-side-card { flex: 1; height: auto; }
-        .berita-side-image { width: 120px; height: 100%; }
+    @push('styles')
+    <style>
+    .font-bebas {
+        font-family: 'Bebas Neue', cursive;
     }
-    @media (max-width: 768px) {
-        .berita-section { padding: 3rem 1rem; }
-        .berita-title { font-size: 2rem; margin-bottom: 2rem; }
-        .berita-main-image { height: 220px; }
-        .berita-main-title { font-size: 1.3rem; }
-        .berita-main-content { padding: 1.25rem; }
-        .berita-side-container { flex-direction: column; }
-        .berita-side-card { flex-direction: row; height: auto; }
-        .berita-side-image { width: 100px; height: 100%; }
-        .berita-side-content { padding: 1rem; }
-        .berita-side-title { font-size: 1rem; }
-    }
-    @media (max-width: 480px) {
-        .berita-section { padding: 2rem 1rem; }
-        .berita-title { font-size: 1.75rem; }
-        .berita-main-image { height: 180px; }
-        .berita-side-card { flex-direction: row; }
-        .berita-side-image { width: 80px; height: 100%; }
-    }
-    html, body { background-color: transparent !important; position: relative; z-index: 0; }
-    main { position: relative; z-index: 1; }
-</style>
-@endpush
 
-<div class="min-h-screen relative z-0">
-@php
-    $beritaArray = $beritas->values();
-    $sections = [
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .scroll-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    </style>
+    @endpush
+
+    <div class="min-h-screen relative z-0">
+        @php
+        $beritaArray = $beritas->values();
+        $sections = [
         ['title' => 'BERITA TERBARU', 'items' => $beritaArray->slice(0, 3)],
         ['title' => 'BERITA SEKOLAH', 'items' => $beritaArray->slice(3, 3)],
         ['title' => 'BERITA LAINNYA', 'items' => $beritaArray->slice(6, 100)],
-    ];
-@endphp
+        ];
+        @endphp
 
-@foreach ($sections as $section)
-    @if ($section['items']->count())
-    <section class="berita-section relative overflow-hidden">
-        <div class="absolute inset-0 -z-[1] pointer-events-none">
-            <div class="absolute w-96 h-96 bg-orange-100 rounded-full opacity-50 top-20 left-1/9"></div>
-            <div class="absolute w-80 h-80 bg-blue-200 rounded-full opacity-30 top-1/2 right-1/4"></div>
-            <div class="absolute w-72 h-72 bg-orange-100 rounded-full opacity-40 bottom-0 left-1/2"></div>
-        </div>
-        <h2 class="berita-title font-bebas">{{ $section['title'] }}</h2>
-        <div class="berita-container">
-            <div class="berita-layout">
-                @php $main = $section['items']->first(); @endphp
-                @if ($main)
-                <div class="berita-main-card scroll-reveal">
-                    <div class="relative overflow-hidden">
-                        <img src="{{ !is_null($main->gambar) ? $assetBase . '/storage/' . $main->gambar : 'https://placehold.co/600x400' }}" alt="{{ $main->title }}" class="berita-main-image aspect-square">
-                        <div class="berita-badge">{{ $section['title'] }}</div>
-                    </div>
-                    <div class="berita-main-content">
-                        <div class="berita-date">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                            {{ $main->created_at->format('d F Y') }}
+        @foreach ($sections as $section)
+        @if ($section['items']->count())
+        <section class="py-16 px-4 bg-transparent relative overflow-hidden">
+            <div class="absolute inset-0 -z-[1] pointer-events-none">
+                <div class="absolute w-96 h-96 bg-orange-100 rounded-full opacity-50 top-20 left-10"></div>
+                <div class="absolute w-80 h-80 bg-blue-200 rounded-full opacity-30 top-1/2 right-1/4"></div>
+                <div class="absolute w-72 h-72 bg-orange-100 rounded-full opacity-40 bottom-0 left-1/2"></div>
+            </div>
+
+            <div class="text-center mb-12 relative">
+                <h2
+                    class="text-4xl font-bebas bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent inline-block pb-4 relative tracking-wider">
+                    {{ $section['title'] }}
+                    <span
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-gradient-to-r from-orange-500 to-orange-300 rounded-full"></span>
+                </h2>
+            </div>
+            <div class="w-[98%] max-w-none mx-auto relative">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+                    @php $main = $section['items']->first(); @endphp
+                    @if ($main)
+                    <div
+                        class="scroll-reveal col-span-1 lg:col-span-2 lg:row-span-2 flex flex-col lg:flex-row bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:-translate-y-1 hover:shadow-xl hover:border-orange-500 transition-all duration-300 group">
+                        <div class="overflow-hidden w-full lg:w-[45%] h-64 lg:h-full flex-shrink-0">
+                            <img src="{{ !is_null($main->gambar) ? $assetBase . '/storage/' . $main->gambar : 'https://placehold.co/600x400' }}"
+                                alt="{{ $main->title }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         </div>
-                        <h3 class="berita-main-title font-poppins">{{ $main->title }}</h3>
-                        <p class="berita-main-excerpt font-poppins">{{ Str::limit($main->deskripsi, 150) }}</p>
-                        <a href="{{ route('berita.show', $main->id) }}" class="berita-read-more font-poppins">Baca Selengkapnya →</a>
-                    </div>
-                </div>
-                @endif
-                <div class="berita-side-container">
-                    @foreach ($section['items']->skip(1)->take(2) as $item)
-                    <div class="berita-side-card scroll-reveal">
-                        <img src="{{ !is_null($item->gambar) ? $assetBase . '/storage/' . $item->gambar : 'https://placehold.co/600x400' }}" alt="{{ $item->title }}" class="berita-side-image">
-                        <div class="berita-side-content">
+                        <div class="p-6 lg:p-8 flex flex-col justify-between flex-1">
                             <div>
-                                <div class="berita-date">
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                <div class="flex items-center gap-2 text-xs text-gray-500 mb-3">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    {{ $main->created_at->format('d F Y') }}
+                                </div>
+                                <h4
+                                    class="font-poppins font-bold text-xl lg:text-2xl text-gray-800 line-clamp-2 lg:line-clamp-3 mb-4 leading-snug">
+                                    {{ $main->title }}</h4>
+                                <p
+                                    class="font-poppins text-sm lg:text-base text-gray-500 line-clamp-3 lg:line-clamp-6 leading-relaxed">
+                                    {{ Str::limit($main->deskripsi, 350) }}</p>
+                            </div>
+                            <a href="{{ route('berita.show', $main->id) }}"
+                                class="font-poppins text-sm font-semibold text-orange-500 hover:underline hover:text-orange-600 mt-6 inline-block">Baca
+                                Selengkapnya →</a>
+                        </div>
+                    </div>
+                    @endif
+                    @foreach ($section['items']->skip(1)->take(2) as $item)
+                    <div
+                        class="scroll-reveal col-span-1 flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-md hover:-translate-y-1 hover:shadow-xl hover:border-orange-500 transition-all duration-300 group">
+                        <div class="overflow-hidden w-full sm:w-[180px] md:w-[200px] h-48 sm:h-full flex-shrink-0">
+                            <img src="{{ !is_null($item->gambar) ? $assetBase . '/storage/' . $item->gambar : 'https://placehold.co/600x400' }}"
+                                alt="{{ $item->title }}"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-5 flex flex-col justify-between flex-1">
+                            <div>
+                                <div class="flex items-center gap-2 text-xs text-gray-500 mb-2">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
                                     {{ $item->created_at->format('d F Y') }}
                                 </div>
-                                <h4 class="berita-side-title font-poppins">{{ $item->title }}</h4>
-                                <p class="berita-side-excerpt font-poppins">{{ Str::limit($item->deskripsi, 100) }}</p>
+                                <h4
+                                    class="font-poppins font-semibold text-base text-gray-800 line-clamp-2 mb-2 leading-snug">
+                                    {{ $item->title }}</h4>
+                                <p
+                                    class="font-poppins text-sm text-gray-500 line-clamp-2 sm:line-clamp-3 leading-relaxed">
+                                    {{ Str::limit($item->deskripsi, 120) }}</p>
                             </div>
-                            <a href="{{ route('berita.show', $item->id) }}" class="berita-read-more">Baca Selengkapnya →</a>
+                            <a href="{{ route('berita.show', $item->id) }}"
+                                class="font-poppins text-xs font-semibold text-orange-500 hover:underline hover:text-orange-600 mt-4 inline-block">Baca
+                                Selengkapnya →</a>
                         </div>
                     </div>
                     @endforeach
+
                 </div>
             </div>
-        </div>
-    </section>
-    @endif
-@endforeach
-</div>
+        </section>
+        @endif
+        @endforeach
+    </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('revealed'));
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    revealElements.forEach(el => observer.observe(el));
-});
-</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => entry.isIntersecting && entry.target.classList.add('revealed'));
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        revealElements.forEach(el => observer.observe(el));
+    });
+    </script>
 </x-layout>
