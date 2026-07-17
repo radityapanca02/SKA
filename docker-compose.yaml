@@ -6,6 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: skariga_app
+    network_mode: "host"
     restart: unless-stopped
     working_dir: /var/www
     volumes:
@@ -20,6 +21,7 @@ services:
   webserver:
     image: nginx:alpine
     container_name: skariga_webserver
+    network_mode: "host"
     restart: unless-stopped
     ports:
       - "8080:80"
