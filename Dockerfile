@@ -5,6 +5,8 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+RUN cp .env.example .env
+
 FROM php:8.4-fpm-alpine
 
 WORKDIR /var/www
