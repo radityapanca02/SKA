@@ -1,35 +1,39 @@
+FROM node:20-alpine AS frontend-builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
 FROM php:8.4-fpm-alpine
 
-# Install system dependencies, PHP extensions, dan NODEJS + NPM
-RUN apk add --no-cache \
-    bash \
-    curl \
-    libpng-dev \
-    libzip-dev \
-    zlib-dev \
-    icu-dev \
-    oniguruma-dev \
-    linux-headers \
-    nodejs \
-    npm
+WORKDIR /var/www
 
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl bcmath gd intl
+RUN apk add --no-cache \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    zip \
+    libzip-dev \
+    unzip \
+    git \
+    icu-dev \
+    bash \
+    mysql-client
+
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo_mysql gd zip intl pcntl bcmath exif
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www
 COPY . .
 
-# Install PHP Dependencies
-RUN composer install --no-interaction --optimize-autoloader --no-dev
+COPY --from=frontend-builder /app/public/build ./public/build
 
-# Install NPM Dependencies & Build Assets (CSS/JS)
-RUN npm install
-RUN npm run build
+RUN composer install --no-dev --optimize-autoloader --no-interaction
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache && \
-    chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+RUN chown -R www-data:www-data /var/www \
+    && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 EXPOSE 9000
 CMD ["php-fpm"]
