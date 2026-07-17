@@ -55,7 +55,7 @@
             </button>
         </form>
 
-        <p class="text-center text-gray-500 text-sm mt-6"><b>&copy;</b> {{ date('Y') }} CTRL + V SMK PGRI 3 Malang</p>
+        <p class="text-center text-gray-500 text-sm mt-6"><b>&copy;</b> {{ date('Y') }} TIK SKARIGA</p>
     </div>
 
     <script>
