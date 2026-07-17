@@ -30,6 +30,8 @@ COPY . .
 
 COPY --from=frontend-builder /app/public/build ./public/build
 
+RUN cp .env.example .env
+
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN chown -R www-data:www-data /var/www \
