@@ -35,8 +35,8 @@ JSON Format:
 }';
 
         try {
-            $apiKey = config('services.groq.api_key', env('GROQ_API_KEY'));
-            $model = config('services.groq.model', env('GROQ_MODEL', 'llama-3.3-70b-versatile'));
+            $apiKey = env('GROQ_API_KEY');
+            $model = env('GROQ_MODEL', 'llama-3.3-70b-versatile');
 
             if (empty($apiKey)) {
                 return response()->json(['error' => 'GROQ_API_KEY belum dikonfigurasi'], 500);
