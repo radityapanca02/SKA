@@ -33,4 +33,4 @@ services:
     dns:
       - 1.1.1.1
       - 8.8.8.8
-    command: tunnel --no-autoupdate run --token eyJhIjoiM2M2MmNjMWFhMGE4OTJlMzk5OTczMGFkNGNkYmZhYjIiLCJ0IjoiYjM0Y2RjYTAtZjc1MC00ZDRmLWE1M2ItZWE4YWRjZTJlMmJiIiwicyI6Ik1qUTFOV0ZpTnpZdE9HTXdNUzAwTm1NM0xXSTVPR0V0Tm1Oak4yUTRNakJpTXpneCJ9
+    command: tunnel --no-autoupdate run --token ${CLOUDFLARE_TUNNEL_TOKEN}
