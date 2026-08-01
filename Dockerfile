@@ -1,7 +1,9 @@
 FROM node:20-alpine AS frontend-builder
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm install
+RUN npm ci
+
 COPY . .
 RUN npm run build
 
@@ -30,12 +32,11 @@ COPY . .
 
 COPY --from=frontend-builder /app/public/build ./public/build
 
-RUN cp .env.example .env
-
 RUN composer install --no-dev --optimize-autoloader --no-interaction
 
 RUN chown -R www-data:www-data /var/www \
     && chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 EXPOSE 9000
+
 CMD ["php-fpm"]

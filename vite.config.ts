@@ -7,19 +7,26 @@ export default defineConfig(({ mode }) => {
     return {
         plugins: [
             laravel({
-                input: ["resources/css/app.css", "resources/css/landing.css", "resources/js/landing.js", "resources/ts/app.ts", "resources/js/admin-pagination.js"],
+                input: [
+                    "resources/css/app.css", 
+                    "resources/css/landing.css", 
+                    "resources/js/landing.js", 
+                    "resources/ts/app.ts", 
+                    "resources/js/admin-pagination.js"
+                ],
                 refresh: true,
             }),
         ],
         server: {
-            host: env.VITE_HOST || 'localhost',
+            host: '0.0.0.0', 
             port: Number.parseInt(env.VITE_PORT) || 5173,
+            strictPort: true,
             watch: {
                 usePolling: true,
                 interval: 500,
             },
             hmr: {
-                host: env.VITE_HOST || 'localhost',
+                host: env.VITE_HMR_HOST || env.VITE_HOST || 'localhost',
                 protocol: 'ws',
                 port: Number.parseInt(env.VITE_PORT) || 5173,
             },
