@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Log;
+
 class ChatbotService
 {
     protected $gemini;
@@ -18,14 +20,30 @@ class ChatbotService
 
     public function ask(string $prompt): string
     {
-        $provider = strtoupper(env('CHATBOT_PROVIDER', 'gemini'));
+        $primaryProvider = strtoupper(env('CHATBOT_PROVIDER', 'GROQ'));
 
-        if ($provider === 'GROQ') {
-            return $this->groq->ask($prompt);
-        } elseif ($provider === 'GEMINI') {
-            return $this->gemini->ask($prompt);
-        } else {
-            return $this->gemini->ask($prompt);
+        if ($primaryProvider === 'GROQ') {
+            try {
+                $response = $this->groq->ask($prompt);
+
+                if (
+                    str_contains($response, 'Terjadi kesalahan') ||
+                    str_contains($response, 'rate_limit') ||
+                    str_contains($response, '429') ||
+                    str_contains($response, 'rate_limit_exceeded')
+                ) {
+                    Log::warning('Groq Failed/Rate Limited. Falling back to Gemini.');
+                    return $this->gemini->ask($prompt);
+                }
+
+                return $response;
+            } catch (\Exception $e) {
+                Log::error('Groq Exception: ' . $e->getMessage());
+                return $this->gemini->ask($prompt);
+            }
         }
+
+        return $this->gemini->ask($prompt);
     }
 }
+
