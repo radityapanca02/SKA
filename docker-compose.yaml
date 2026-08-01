@@ -34,6 +34,6 @@ services:
     dns:
       - 1.1.1.1
       - 8.8.8.8
-    environtment:
+    environment:
       - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
     command: tunnel --no-autoupdate run
