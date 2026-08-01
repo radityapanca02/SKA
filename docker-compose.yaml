@@ -16,6 +16,8 @@ services:
 
   webserver:
     image: nginx:alpine
+    ports:
+      - 8080:8080
     container_name: skariga_webserver
     network_mode: "host"
     restart: always
