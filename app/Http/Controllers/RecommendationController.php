@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
+use Throwable;
 
 class RecommendationController extends Controller
 {
@@ -39,12 +40,12 @@ JSON Format:
             $model = env('GROQ_MODEL', 'llama-3.3-70b-versatile');
 
             if (empty($apiKey)) {
-                return response()->json(['error' => 'GROQ_API_KEY belum dikonfigurasi'], 500);
+                return response()->json(['error' => 'GROQ_API_KEY belum dikonfigurasi di file .env'], 500);
             }
 
-            $response = Http::retry(2, 1000, function ($exception) {
+            $response = Http::retry(2, 1000, function (Throwable $exception) {
                 return $exception->getCode() === 429;
-            })->timeout(15)->withHeaders([
+            }, throw: false)->timeout(15)->withHeaders([
                 'Content-Type'  => 'application/json',
                 'Authorization' => 'Bearer ' . $apiKey,
             ])->post('https://api.groq.com/openai/v1/chat/completions', [
@@ -60,7 +61,11 @@ JSON Format:
 
             if ($response->failed()) {
                 Log::error('Groq API Error:', ['status' => $response->status(), 'body' => $response->body()]);
-                return response()->json(['error' => 'Gagal menghubungi AI service (Rate limit/Service busy)'], 500);
+                return response()->json([
+                    'error'   => 'Gagal menghubungi AI service',
+                    'status'  => $response->status(),
+                    'details' => $response->json() ?? $response->body()
+                ], 500);
             }
 
             $result = $response->json();
@@ -80,9 +85,17 @@ JSON Format:
             Log::error('JSON Parse Error:', ['raw' => $cleanText, 'error' => json_last_error_msg()]);
             return response()->json(['error' => 'Format respon AI tidak valid'], 500);
 
-        } catch (\Exception $e) {
-            Log::error('Exception in getRecommendation:', ['error' => $e->getMessage()]);
-            return response()->json(['error' => 'Terjadi kesalahan sistem'], 500);
+        } catch (Throwable $e) {
+            Log::error('Exception in getRecommendation:', [
+                'message' => $e->getMessage(),
+                'file'    => $e->getFile(),
+                'line'    => $e->getLine(),
+            ]);
+
+            return response()->json([
+                'error'   => 'Terjadi kesalahan sistem',
+                'message' => $e->getMessage(),
+            ], 500);
         }
     }
 }
