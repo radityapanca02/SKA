@@ -11,7 +11,7 @@ class RecommendationController extends Controller
 {
     public function getRecommendation(Request $request)
     {
-        $keyword = trim($request->input('keyword'));
+        $keyword = trim($request->input('keyword') ?? $request->input('minat') ?? '');
 
         if (!$keyword) {
             return response()->json(['error' => 'Keyword wajib diisi'], 400);
@@ -36,55 +36,55 @@ JSON Format:
 }';
 
         try {
-            $rawKey = env('GROQ_API_KEY');
-            $apiKey = $rawKey ? trim(preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $rawKey)) : null;
+            $apiKey = env('GROQ_API_KEY');
             $model = env('GROQ_MODEL', 'llama-3.3-70b-versatile');
 
             if (empty($apiKey)) {
                 return response()->json(['error' => 'GROQ_API_KEY belum dikonfigurasi di file .env'], 500);
             }
 
-            $response = Http::retry(2, 1000, function (Throwable $exception) {
-                return $exception->getCode() === 429;
-            }, throw: false)->timeout(15)->withHeaders([
+            $response = Http::withoutVerifying()->withHeaders([
+                'Authorization' => 'Bearer '.$apiKey,
                 'Content-Type'  => 'application/json',
-                'Authorization' => 'Bearer ' . $apiKey,
             ])->post('https://api.groq.com/openai/v1/chat/completions', [
-                'model'           => $model,
-                'messages'        => [
-                    ['role' => 'system', 'content' => $systemPrompt],
-                    ['role' => 'user', 'content' => "Minat: {$keyword}"],
+                'model' => $model,
+                'messages' => [
+                    [
+                        'role'    => 'system',
+                        'content' => $systemPrompt,
+                    ],
+                    [
+                        'role'    => 'user',
+                        'content' => "Minat: {$keyword}",
+                    ],
                 ],
-                'temperature'     => 0.3,
-                'max_tokens'      => 350,
-                'response_format' => ['type' => 'json_object'],
+                'temperature' => 0.3,
+                'max_tokens'  => 350,
             ]);
 
-            if ($response->failed()) {
-                Log::error('Groq API Error:', ['status' => $response->status(), 'body' => $response->body()]);
-                return response()->json([
-                    'error'   => 'Gagal menghubungi AI service',
-                    'status'  => $response->status(),
-                    'details' => $response->json() ?? $response->body()
-                ], 500);
+            if ($response->successful()) {
+                $data = $response->json();
+                $aiText = $data['choices'][0]['message']['content'] ?? null;
+
+                if (!$aiText) {
+                    return response()->json(['error' => 'Respon AI kosong'], 500);
+                }
+
+                $cleanText = trim(preg_replace('/```(json)?|```/', '', $aiText));
+                $parsed = json_decode($cleanText, true);
+
+                if (json_last_error() === JSON_ERROR_NONE) {
+                    return response()->json($parsed);
+                }
+
+                return response()->json(['error' => 'Format respon AI tidak valid'], 500);
             }
 
-            $result = $response->json();
-            $aiText = $result['choices'][0]['message']['content'] ?? null;
-
-            if (!$aiText) {
-                return response()->json(['error' => 'Respon AI kosong'], 500);
-            }
-
-            $cleanText = trim(preg_replace('/```(json)?|```/', '', $aiText));
-            $parsed = json_decode($cleanText, true);
-
-            if (json_last_error() === JSON_ERROR_NONE) {
-                return response()->json($parsed);
-            }
-
-            Log::error('JSON Parse Error:', ['raw' => $cleanText, 'error' => json_last_error_msg()]);
-            return response()->json(['error' => 'Format respon AI tidak valid'], 500);
+            Log::error('Groq Error in Recommendation:', ['status' => $response->status(), 'body' => $response->body()]);
+            return response()->json([
+                'error'   => 'Gagal menghubungi AI service',
+                'details' => $response->json() ?? $response->body(),
+            ], $response->status());
 
         } catch (Throwable $e) {
             Log::error('Exception in getRecommendation:', [
