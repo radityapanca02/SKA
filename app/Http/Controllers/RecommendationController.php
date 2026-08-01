@@ -36,7 +36,8 @@ JSON Format:
 }';
 
         try {
-            $apiKey = env('GROQ_API_KEY');
+            $rawKey = env('GROQ_API_KEY');
+            $apiKey = $rawKey ? trim(preg_replace('/[\x00-\x1F\x7F\xA0]/u', '', $rawKey)) : null;
             $model = env('GROQ_MODEL', 'llama-3.3-70b-versatile');
 
             if (empty($apiKey)) {
