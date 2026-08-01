@@ -1,24 +1,82 @@
-Profil SMK PGRI 3 Malang (SKARIGA):
-Nama: SMK PGRI 3 Malang (Motto: Success by Discipline)
+=== Profil SMK PGRI 3 Malang (SKARIGA) ===
+Nama: SMK PGRI 3 Malang (SKARIGA)
+Motto: Success by Discipline
+Status: Swasta | Tanggal Pendirian: 9 Februari 1987 | SK Pendirian: 364/32.B-1987
+Akreditasi: A (SK No. 032/BAN-SM/SK/2019) | Sertifikasi: ISO 9001:2008
 Kepala Sekolah: M. Lukman Hakim, ST., MM
-Akreditasi: A | ISO 9001:2008 | Pendirian: 9 Februari 1987
-Alamat: Jl. Raya Tlogomas Gg. 9 No.29, Lowokwaru, Malang, Jawa Timur 65144
-Kontak WA: 0821-3300-0370 | Telp/Faks: 0341-554383 | Web: smkpgri3malang.sch.id
+Kurikulum: Kurikulum 2013 Revisi
+Sejarah: Dirintis 1986 oleh 16 dosen muda UB (dahulu STM PGRI Dau Malang), berganti nama menjadi SMK PGRI 3 Malang pada 1998. Berkelanjutan dalam inovasi pendidikan berbasis teknologi & industri.
 
-Program Keahlian:
-1. Departemen TIK: RPL, TKJ (Mikrotik Class), Multimedia, Animasi (RolePlay Class)
-2. Departemen Pemesinan: Teknik Pengelasan (Transformer Class), Teknik Pemesinan (Partnership Class), Manajemen Niaga (Alfamart Class)
-3. Departemen Otomotif: Teknik Kendaraan Ringan (Toyota Class), Teknik Sepeda Motor (Suzuki Class), Bodi Otomotif (Morodadi Class)
-4. Departemen Elektronika: Elektronika Industri, Audio-Video (LG Class), Hotel Engineering (Swiss Class), PLN Distribusi, PJB Class
+=== LOKASI & KONTAK ===
+Alamat Utama: Jl. Raya Tlogomas Gg. 9 No.29, Lowokwaru, Kota Malang, Jawa Timur 65144
+Alamat Kampus: Jl. Surabaya No.7, Kauman, Kec. Klojen, Kota Malang, Jawa Timur 65119
+WhatsApp / Call Center: +62-821-3300-0370
+Telepon/Faks: (0341) 554383 / (0341) 362065
+Email: info@smkpgri3malang.sch.id
+Website: https://smkpgri3malang.sch.id / www.smkpgri3-malang.sch.id
+Google Maps: https://maps.app.goo.gl/WnFCmvAJwg9GwM4A8
 
-Pendaftaran (PPDB):
-- Offline: Datang langsung ke Jl. Raya Tlogomas Gg. 9 No.29 Malang, buat akun admin, cek fisik/seragam, isi formulir & berkas.
-- Online: Hubungi WA 0821-3300-0370, ikuti panduan digital staff.
+=== PROGRAM KEAHLIAN (DEPARTEMEN) ===
+1. Departemen TIK:
+   - Rekayasa Perangkat Lunak (RPL)
+   - Teknik Komputer & Jaringan / TKJ (Mikrotik Class)
+   - Multimedia
+   - Animasi (RolePlay Class)
+2. Departemen Pemesinan:
+   - Teknik Pengelasan (Transformer Class)
+   - Teknik Pemesinan (Partnership Class)
+   - Manajemen Niaga (Alfamart Class)
+3. Departemen Otomotif:
+   - Teknik Kendaraan Ringan / TKRO (Toyota Class)
+   - Teknik Sepeda Motor / TSM (Suzuki Class)
+   - Bodi Otomotif (Morodadi Class)
+4. Departemen Elektronika:
+   - Elektronika Industri
+   - Audio-Video (LG Class)
+   - Hotel Engineering (Swiss Class)
+   - PLN Distribusi
+   - PJB Class (Kimia, Mekanik, Instrumen, Listrik)
 
-Kerjasama Industri & Fasilitas:
-- Mitra: Toyota, Suzuki, PLN, Alfamart, LG, Swiss-Belhotel. PKL 12 bulan (lokal & luar negeri).
-- Fasilitas: Lab Komputer/Robotika/Listrik/Otomotif/Mesin, Studio Multimedia/Animasi, Perpustakaan Digital, Wi-Fi, Masjid, Aula, Lapangan.
+=== ALUR PENDAFTARAN (PPDB) ===
+- Pendaftaran Offline:
+  1. Datang ke Jl. Raya Tlogomas Gg. 9 No.29, Malang.
+  2. Buat akun pendaftaran di ruang administrasi.
+  3. Cek fisik & pengukuran seragam.
+  4. Isi formulir & serahkan berkas persyaratan.
+  5. Pengumuman hasil seleksi & pengambilan fasilitas belajar.
+- Pendaftaran Online:
+  1. Hubungi WhatsApp Call Center 0821-3300-0370.
+  2. Kirim salam & tujuan pendaftaran.
+  3. Pendaftaran dipandu digital oleh staf hingga selesai.
 
-Prestasi & Alumni:
-- Medali Emas & Perunggu ASEAN WorldSkill 2025 (Edsel Parama Mustapa & Risca Revan), Juara 1 LKS Nasional 2025 (RMS), Juara LKS Jatim.
-- Alumni berkarier di Daihatsu Jepang, PT WIKA, PT SAI, PT JABC, dll.
+=== KERJASAMA INDUSTRI & FASILITAS ===
+Mitra Industri: Toyota, Suzuki, PLN, Alfamart, LG, Swiss-Belhotel.
+Magang / PKL: PKL 12 bulan (dalam & luar negeri).
+Layanan Karir: Penyuluhan karir, penempatan kerja, tracer study alumni.
+Fasilitas Sekolah:
+- Lab Komputer & Robotika, Studio Multimedia & Animasi, Lab Bahasa, Lab Listrik, Lab Otomotif, Lab Mesin
+- Bengkel Otomotif & Mesin, Ruang Kelas Berbasis Industri, Perpustakaan Digital
+- Wi-Fi Campus & System Informasi Akademik, Bimbingan & Konsultasi, Aula, Lapangan Olahraga, Masjid, Kantin
+
+=== EKSTRAKURIKULER ===
+Pramuka, Paskibra / PASKIBRAKA, PMR, Futsal, Sepak Bola, Bola Voli, Bola Basket, Bulu Tangkis, E-Sports, Jurnalistik, BTQ, Banjari, Baca Kitab, Ilustrasi, Fotografi, Indo Craft, Menari / Seni Tari, Band, Sastra, Keputrian, Audio Video, 3D Modelling, Android Club, Arduino IoT, CADD & CNC, Auto Plus, Sains Club, Bahasa Inggris, Robotika.
+
+=== PRESTASI SEKOLAH & ALUMNI ===
+Prestasi Utama:
+- Medali Emas & Perunggu ASEAN WorldSkill 2025 (Bidang IT Software Solution for Business).
+- Juara 1 LKS Nasional 2025 (RMS) & Juara 2 LKS Nasional 2025 (Industrial Control).
+- Juara 1 LKS Jawa Timur ke-32 & ke-33 (Electronics, Industrial Control, RMS, Car Painting, IT Software Solution, Prototype Modelling).
+- Juara 2 LKS Jatim ke-32 (Web Technology) & Juara 3 (Marketing Online).
+- Juara 1 Sistem Informasi Festival 2024 (UI/UX Design), Juara Nasional Lomba Coding SMK.
+- SMK dengan jumlah siswa terbanyak ke-4 di Indonesia (Kemendikbud 2016).
+
+Alumni Berprestasi:
+- Edsel Parama Mustapa (2024): Medali Emas ASEAN WorldSkill 2025 (IT Software Solution), BINUS Training Center, Target WorldSkill Asia 2026 China.
+- Risca Revan Suasmara (2024): Medali Perunggu ASEAN WorldSkill 2025 (IT).
+- Aditya Tantra (2018): Engineer di Daihatsu Motor Co. Ltd, Jepang.
+- Khoko Rama Viera (2018): Mandor HSE di PT. WIKA.
+- Reza Abi Utomo & Febrianto Nugroho (2017): Teknisi di PT. JABC.
+- Choiriatul Aulia (2018): Operator Produksi di PT. Surabaya Autocomp Indonesia.
+- Ahmad Fauzan (2018): Teknisi Elektronika di Rekavitronica.
+- Tiyyoh Fahmi (2017): Developer di Inovasi Tjarko Buana (ITB).
+- Ximent Sultan (2017): Supervisor Proyek di PT. Bangung Dedeko Makmur.
